@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.16 2004/10/13 09:34:23 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.17 2004/10/28 01:28:54 chuck Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -36,14 +36,11 @@
   </maintainers>
 
   <release>
-    <version>0.0.4</version>
-    <date>2004-10-13</date>
+    <version>0.0.5</version>
+    <date>2004-10-31</date>
     <state>beta</state>
     <notes>
-      - Generalized Diff Renderer parameter handling.
-      - Added an inline renderer contributed by Ciprian Popovici (ciprian@zuavra.net).
-      - Fixed PHPDoc.
-      - Fixed a PHP 5 incompatibility.
+      - Fixed variable name in Text_MappedDiff.
     </notes>
 
     <filelist>
@@ -87,6 +84,15 @@
 
   <changelog>
     <release>
+      <version>0.0.5</version>
+      <date>2004-10-31</date>
+      <state>beta</state>
+      <notes>
+        - Fixed variable name in Text_MappedDiff.
+      </notes>
+    </release>
+
+    <release>
       <version>0.0.4</version>
       <date>2004-10-13</date>
       <state>beta</state>
@@ -95,7 +101,7 @@
         - Added an inline renderer contributed by Ciprian Popovici (ciprian@zuavra.net).
         - Fixed PHPDoc.
         - Fixed a PHP 5 incompatibility.
-        </notes>
+      </notes>
     </release>
 
     <release>
