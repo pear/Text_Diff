@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.11 2004/12/07 19:26:19 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.12 2005/03/21 12:38:34 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -157,7 +157,7 @@ class Text_Diff {
      */
     function _trimNewlines(&$line, $key)
     {
-        $line = str_replace(array("\n", "\r", "\r\n"), '', $line);
+        $line = str_replace(array("\n", "\r"), '', $line);
     }
 
     /**
@@ -196,7 +196,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.11 2004/12/07 19:26:19 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.12 2005/03/21 12:38:34 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
