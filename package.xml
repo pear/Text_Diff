@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.4 2004/01/09 21:46:29 chuck Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.5 2004/03/16 07:24:47 jon Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -14,13 +14,19 @@
       <name>Chuck Hagenbuch</name>
       <email>chuck@horde.org</email>
     </maintainer>
+    <maintainer>
+      <user>jon</user>
+      <role>developer</role>
+      <name>Jon Parise</name>
+      <email>jon@horde.org</email>
+    </maintainer>
   </maintainers>
 
   <release>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <state>alpha</state>
-    <date>2004-01-09</date>
-    <notes>Initial package release</notes>
+    <date>2004-03-15</date>
+    <notes>Added xdiff support</notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
@@ -42,6 +48,7 @@
 
     <deps>
       <dep type="php" rel="ge" version="4.2.0+" />
+      <dep type="ext" rel="has" optional="yes">xdiff</dep>
     </deps>
 
     <provides type="class" name="Text_Diff" />
@@ -50,6 +57,13 @@
   </release>
 
   <changelog>
+    <release>
+      <version>0.0.2</version>
+      <date>2004-03-15</date>
+      <state>alpha</state>
+      <notes>Added optional xdiff support</notes>
+    </release>
+
     <release>
       <version>0.0.1</version>
       <date>2004-01-09</date>
