@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.6 2005/03/21 16:37:25 mdjukic Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.7 2005/03/21 16:52:53 mdjukic Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -71,27 +71,17 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         return $header;
     }
 
-    function _added($lines, $words = false)
+    function _added($lines)
     {
-        if ($words) {
-            $lines[0] = $this->_ins_prefix . $lines[0];
-            $lines[count($lines) - 1] .= $this->_ins_suffix;
-        } else {
-            array_unshift($lines, $this->_ins_prefix);
-            array_push($lines, $this->_ins_suffix);
-        }
+        $lines[0] = $this->_ins_prefix . $lines[0];
+        $lines[count($lines) - 1] .= $this->_ins_suffix;
         return $this->_lines($lines);
     }
 
     function _deleted($lines, $words = false)
     {
-        if ($words) {
-            $lines[0] = $this->_del_prefix . $lines[0];
-            $lines[count($lines) - 1] .= $this->_del_suffix;
-        } else {
-            array_unshift($lines, $this->_del_prefix);
-            array_push($lines, $this->_del_suffix);
-        }
+        $lines[0] = $this->_del_prefix . $lines[0];
+        $lines[count($lines) - 1] .= $this->_del_suffix;
         return $this->_lines($lines);
     }
 
@@ -100,7 +90,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         /* If we've already split on words, don't try to do so again - just
          * display. */
         if ($this->_split_level == 'words') {
-            return $this->_deleted($orig, true) . $this->_added($final, true);
+            return $this->_deleted($orig) . $this->_added($final);
         }
 
         $text1 = implode("\n", $orig);
