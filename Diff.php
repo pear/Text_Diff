@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by
  * Geoffrey T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.6 2004/05/13 15:06:32 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.7 2004/07/03 15:26:46 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -193,7 +193,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.6 2004/05/13 15:06:32 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.7 2004/07/03 15:26:46 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -777,7 +777,7 @@ class Text_Diff_Op_copy extends Text_Diff_Op {
 
     function &reverse()
     {
-        return new Text_Diff_Op_copy($this->final, $this->orig);
+        return $reverse = &new Text_Diff_Op_copy($this->final, $this->orig);
     }
 
 }
@@ -797,7 +797,7 @@ class Text_Diff_Op_delete extends Text_Diff_Op {
 
     function &reverse()
     {
-        return new Text_Diff_Op_add($this->orig);
+        return $reverse = &new Text_Diff_Op_add($this->orig);
     }
 
 }
@@ -817,7 +817,7 @@ class Text_Diff_Op_add extends Text_Diff_Op {
 
     function &reverse()
     {
-        return new Text_Diff_Op_delete($this->final);
+        return $reverse = &new Text_Diff_Op_delete($this->final);
     }
 
 }
@@ -837,7 +837,7 @@ class Text_Diff_Op_change extends Text_Diff_Op {
 
     function &reverse()
     {
-        return new Text_Diff_Op_change($this->final, $this->orig);
+        return $reverse = &new Text_Diff_Op_change($this->final, $this->orig);
     }
 
 }
