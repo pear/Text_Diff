@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.2 2004/01/09 20:22:05 chuck Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.3 2004/01/09 20:29:27 chuck Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -23,8 +23,8 @@
     <notes>Initial package release</notes>
 
     <filelist>
+      <file role="php" baseinstalldir="/Text" name="Diff.php" />
       <dir role="php" baseinstalldir="/Text" name="Diff">
-        <file name="Diff.php" />
         <file name="Renderer.php" />
 	    <dir role="php" name="Renderer">
 	      <file name="unified.php" />
