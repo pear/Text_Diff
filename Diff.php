@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by
  * Geoffrey T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.3 2004/01/09 21:46:29 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.4 2004/03/16 07:24:47 jon Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -30,7 +30,12 @@ class Text_Diff {
         array_walk($from_lines, array($this, '_trimNewlines'));
         array_walk($to_lines, array($this, '_trimNewlines'));
 
-        $engine = &new Text_Diff_Engine();
+        if (extension_loaded('xdiff')) {
+            $engine = &new Text_Diff_Engine_xdiff();
+        } else {
+            $engine = &new Text_Diff_Engine_native();
+        }
+
         $this->_edits = $engine->diff($from_lines, $to_lines);
     }
 
@@ -186,7 +191,60 @@ class Text_Diff {
 }
 
 /**
- * Class used internally by Diff to actually compute the diffs.
+ * Class used internally by Diff to actually compute the diffs.  This class
+ * uses the xdiff PECL package (http://pecl.php.net/package/xdiff) to compute
+ * the differences between the two input arrays.
+ *
+ * @author  Jon Parise <jon@horde.org>
+ * @package Text_Diff
+ * @access  private
+ */
+class Text_Diff_Engine_xdiff
+{
+    function diff($from_lines, $to_lines)
+    {
+        /* Convert the two input arrays into strings for xdiff processing. */
+        $from_string = implode("\n", $from_lines);
+        $to_string = implode("\n", $to_lines);
+
+        /* Diff the two strings and convert the result to an array. */
+        $diff = xdiff_string_diff($from_string, $to_string, count($to_lines));
+        $diff = explode("\n", $diff);
+
+        /*
+         * Walk through the diff one line at a time.  We build the $edits array
+         * of diff operations by reading the first character of the xdiff
+         * output (which is in the "unified diff" format).
+         *
+         * Note that we don't have enough information to detect "changed" lines
+         * using this approach, so we can't add Text_Diff_Op_changed instances
+         * to the $edits array.  The result is still perfectly valid, albeit a
+         * little less descriptive and efficient.
+         */
+        $edits = array();
+        foreach ($diff as $line) {
+            switch ($line[0]) {
+            case ' ':
+                $edits[] = &new Text_Diff_Op_copy(array(substr($line, 1)));
+                break;
+
+            case '+':
+                $edits[] = &new Text_Diff_Op_add(array(substr($line, 1)));
+                break;
+
+            case '-':
+                $edits[] = &new Text_Diff_Op_delete(array(substr($line, 1)));
+                break;
+            }
+        }
+
+        return $edits;
+    }
+}
+
+/**
+ * Class used internally by Diff to actually compute the diffs.  This class
+ * is implemented using native PHP code.
  *
  * The algorithm used here is mostly lifted from the perl module
  * Algorithm::Diff (version 1.06) by Ned Konz, which is available at:
@@ -208,7 +266,7 @@ class Text_Diff {
  * @package Text_Diff
  * @access  private
  */
-class Text_Diff_Engine {
+class Text_Diff_Engine_native {
 
     function diff($from_lines, $to_lines)
     {
