@@ -5,6 +5,8 @@
  *
  * Take two files from the command line args and produce a unified
  * diff of them.
+ *
+ * @package Text_Diff
  */
 
 include_once 'Text/Diff.php';
