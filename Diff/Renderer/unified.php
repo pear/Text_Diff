@@ -4,7 +4,7 @@
  *
  * This class renders the diff in classic "unified diff" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.3 2004/09/15 05:00:00 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.4 2005/03/07 14:58:30 jan Exp $
  *
  * @package Text_Diff
  */
@@ -33,18 +33,17 @@ class Text_Diff_Renderer_unified extends Text_Diff_Renderer {
 
     function _added($lines)
     {
-        $this->_lines($lines, '+');
+        return $this->_lines($lines, '+');
     }
 
     function _deleted($lines)
     {
-        $this->_lines($lines, '-');
+        return $this->_lines($lines, '-');
     }
 
     function _changed($orig, $final)
     {
-        $this->_deleted($orig);
-        $this->_added($final);
+        return $this->_deleted($orig) . $this->_added($final);
     }
 
 }
