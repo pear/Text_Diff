@@ -15,4 +15,6 @@ $renderer = &new Text_Diff_Renderer_inline();
 echo $renderer->render($diff);
 ?>
 --EXPECT--
-This line is the same.This line is different in<del> 1.txt </del><ins> 2.txt </ins>This line is the same.
+This line is the same.
+This line is different in<del> 1.txt </del><ins> 2.txt </ins>
+This line is the same.
