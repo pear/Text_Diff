@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.5 2005/03/07 14:58:30 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.6 2005/03/21 16:37:25 mdjukic Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -71,17 +71,27 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         return $header;
     }
 
-    function _added($lines)
+    function _added($lines, $words = false)
     {
-        array_unshift($lines, $this->_ins_prefix);
-        array_push($lines, $this->_ins_suffix);
+        if ($words) {
+            $lines[0] = $this->_ins_prefix . $lines[0];
+            $lines[count($lines) - 1] .= $this->_ins_suffix;
+        } else {
+            array_unshift($lines, $this->_ins_prefix);
+            array_push($lines, $this->_ins_suffix);
+        }
         return $this->_lines($lines);
     }
 
-    function _deleted($lines)
+    function _deleted($lines, $words = false)
     {
-        array_unshift($lines, $this->_del_prefix);
-        array_push($lines, $this->_del_suffix);
+        if ($words) {
+            $lines[0] = $this->_del_prefix . $lines[0];
+            $lines[count($lines) - 1] .= $this->_del_suffix;
+        } else {
+            array_unshift($lines, $this->_del_prefix);
+            array_push($lines, $this->_del_suffix);
+        }
         return $this->_lines($lines);
     }
 
@@ -90,7 +100,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         /* If we've already split on words, don't try to do so again - just
          * display. */
         if ($this->_split_level == 'words') {
-            return $this->_deleted($orig) . $this->_added($final) . "\n";
+            return $this->_deleted($orig, true) . $this->_added($final, true);
         }
 
         $text1 = implode("\n", $orig);
@@ -113,11 +123,11 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
                                explode(' ', $text2));
 
         /* Get the diff in inline format.
-         * FIXME: should propogate other parameters here too. */
+         * FIXME: should propagate other parameters here too. */
         $renderer = &new Text_Diff_Renderer_inline(array('split_level' => 'words'));
 
         /* Run the diff and get the output. */
-        return str_replace($nl, "\n", $renderer->render($diff));
+        return str_replace($nl, "\n", $renderer->render($diff)) . "\n";
     }
 
 }
