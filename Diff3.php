@@ -5,7 +5,7 @@ require_once 'Text/Diff.php';
 /**
  * A class for computing three way diffs.
  *
- * $Horde: framework/Text_Diff/Diff3.php,v 1.1 2004/03/19 18:53:11 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff3.php,v 1.2 2004/10/13 09:30:20 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -43,8 +43,7 @@ class Text_Diff3 extends Text_Diff {
         $lines = array();
         foreach ($this->_edits as $edit) {
             if ($edit->isConflict()) {
-                // FIXME: this should probably be moved somewhere
-                // else.
+                /* FIXME: this should probably be moved somewhere else. */
                 $lines = array_merge($lines,
                                      array('<<<<<<<' . ($label1 ? ' ' . $label1 : '')),
                                      $edit->final1,
@@ -72,9 +71,9 @@ class Text_Diff3 extends Text_Diff {
         $e2 = current($edits2);
         while ($e1 || $e2) {
             if ($e1 && $e2 && is_a($e1, 'Text_Diff_Op_copy') && is_a($e2, 'Text_Diff_Op_copy')) {
-                // We have copy blocks from both diffs. This is the
-                // (only) time we want to emit a diff3 copy block.
-                // Flush current diff3 diff block, if any.
+                /* We have copy blocks from both diffs. This is the (only)
+                 * time we want to emit a diff3 copy block.  Flush current
+                 * diff3 diff block, if any. */
                 if ($edit = $bb->finish()) {
                     $edits[] = $edit;
                 }

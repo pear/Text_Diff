@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.2 2004/09/15 21:03:33 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.3 2004/10/13 09:30:20 jan Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -47,8 +47,8 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
     var $_block_header = '';
 
     /**
-     * What are we currently splitting on? Used to recurse to show
-     * word-level changes.
+     * What are we currently splitting on? Used to recurse to show word-level
+     * changes.
      */
     var $_split_level = 'lines';
 
@@ -87,8 +87,8 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
 
     function _changed($orig, $final)
     {
-        // If we've already split on words, don't try to do so again -
-        // just display.
+        /* If we've already split on words, don't try to do so again - just
+         * display. */
         if ($this->_split_level == 'words') {
             $this->_deleted($orig);
             $this->_added($final);
@@ -99,27 +99,27 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         $text1 = implode("\n", $orig);
         $text2 = implode("\n", $final);
 
-        // Pad to make sure we can split on word boundaries.
+        /* Pad to make sure we can split on word boundaries. */
         $text1 = str_replace("\n", " \n", $text1);
         $text2 = str_replace("\n", " \n", $text2);
 
-        // Non-printing newline marker.
+        /* Non-printing newline marker. */
         $nl = "\0";
 
-        // Save newlines.
+        /* Save newlines. */
         $text1 = str_replace("\n", $nl, $text1);
         $text2 = str_replace("\n", $nl, $text2);
 
-        // Create the diff, splitting on word boundaries (loosely
-        // defined as spaces).
+        /* Create the diff, splitting on word boundaries (loosely defined as
+         * spaces). */
         $diff = &new Text_Diff(explode(' ', $text1),
                                explode(' ', $text2));
 
-        // Get the diff in inline format.
-        // FIXME: should propogate other parameters here too.
+        /* Get the diff in inline format.
+         * FIXME: should propogate other parameters here too. */
         $renderer = &new Text_Diff_Renderer_inline(array('split_level' => 'words'));
 
-        // Restore newlines and display the result.
+        /* Restore newlines and display the result. */
         echo str_replace($nl, "\n", $renderer->render($diff));
     }
 

@@ -2,11 +2,10 @@
 /**
  * A class to render Diffs in different formats.
  *
- * This class renders the diff in classic diff format. It is intended
- * that this class be customized via inheritance, to obtain fancier
- * outputs.
+ * This class renders the diff in classic diff format. It is intended that
+ * this class be customized via inheritance, to obtain fancier outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.4 2004/09/15 04:59:59 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.5 2004/10/13 09:30:20 jan Exp $
  *
  * @package Text_Diff
  */
@@ -15,19 +14,22 @@ class Text_Diff_Renderer {
     /**
      * Number of leading context "lines" to preserve.
      *
-     * This should be left at zero for this class, but subclasses
-     * may want to set this to other values.
+     * This should be left at zero for this class, but subclasses may want to
+     * set this to other values.
      */
     var $_leading_context_lines = 0;
 
     /**
      * Number of trailing context "lines" to preserve.
      *
-     * This should be left at zero for this class, but subclasses
-     * may want to set this to other values.
+     * This should be left at zero for this class, but subclasses may want to
+     * set this to other values.
      */
     var $_trailing_context_lines = 0;
 
+    /**
+     * Constructor.
+     */
     function Text_Diff_Renderer($params = array())
     {
         foreach ($params as $param => $value) {
@@ -39,9 +41,9 @@ class Text_Diff_Renderer {
     }
 
     /**
-     * Render a diff.
+     * Renders a diff.
      *
-     * @param $diff object Text_Diff  A Text_Diff object.
+     * @param Text_Diff $diff  A Text_Diff object.
      *
      * @return string  The formatted output.
      */
