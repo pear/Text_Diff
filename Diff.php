@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by
  * Geoffrey T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.5 2004/03/19 18:53:11 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.6 2004/05/13 15:06:32 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -115,10 +115,9 @@ class Text_Diff {
      *
      * @return array The original sequence of strings.
      */
-    function orig()
+    function getOriginal()
     {
         $lines = array();
-
         foreach ($this->_edits as $edit) {
             if ($edit->orig) {
                 array_splice($lines, count($lines), 0, $edit->orig);
@@ -133,12 +132,11 @@ class Text_Diff {
      * This reconstructs the $to_lines parameter passed to the
      * constructor.
      *
-     * @return array The sequence of strings.
+     * @return array  The sequence of strings.
      */
-    function final()
+    function getFinal()
     {
         $lines = array();
-
         foreach ($this->_edits as $edit) {
             if ($edit->final) {
                 array_splice($lines, count($lines), 0, $edit->final);
@@ -166,18 +164,18 @@ class Text_Diff {
      */
     function _check($from_lines, $to_lines)
     {
-        if (serialize($from_lines) != serialize($this->orig())) {
+        if (serialize($from_lines) != serialize($this->getOriginal())) {
             trigger_error("Reconstructed original doesn't match", E_USER_ERROR);
         }
-        if (serialize($to_lines) != serialize($this->final())) {
+        if (serialize($to_lines) != serialize($this->getFinal())) {
             trigger_error("Reconstructed final doesn't match", E_USER_ERROR);
         }
 
         $rev = $this->reverse();
-        if (serialize($to_lines) != serialize($rev->orig())) {
+        if (serialize($to_lines) != serialize($rev->getOriginal())) {
             trigger_error("Reversed original doesn't match", E_USER_ERROR);
         }
-        if (serialize($from_lines) != serialize($rev->final())) {
+        if (serialize($from_lines) != serialize($rev->getFinal())) {
             trigger_error("Reversed final doesn't match", E_USER_ERROR);
         }
 
@@ -195,7 +193,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.5 2004/03/19 18:53:11 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.6 2004/05/13 15:06:32 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -418,6 +416,7 @@ class Text_Diff_Engine_native {
                 $edits[] = &new Text_Diff_Op_add($add);
             }
         }
+
         return $edits;
     }
 
@@ -778,7 +777,7 @@ class Text_Diff_Op_copy extends Text_Diff_Op {
 
     function &reverse()
     {
-        return $diff = new Text_Diff_Op_copy($this->final, $this->orig);
+        return new Text_Diff_Op_copy($this->final, $this->orig);
     }
 
 }
@@ -798,7 +797,7 @@ class Text_Diff_Op_delete extends Text_Diff_Op {
 
     function &reverse()
     {
-        return $diff = new Text_Diff_Op_add($this->orig);
+        return new Text_Diff_Op_add($this->orig);
     }
 
 }
@@ -818,7 +817,7 @@ class Text_Diff_Op_add extends Text_Diff_Op {
 
     function &reverse()
     {
-        return $diff = new Text_Diff_Op_delete($this->final);
+        return new Text_Diff_Op_delete($this->final);
     }
 
 }
@@ -838,7 +837,7 @@ class Text_Diff_Op_change extends Text_Diff_Op {
 
     function &reverse()
     {
-        return $diff = new _DiffOp_Change($this->final, $this->orig);
+        return new Text_Diff_Op_change($this->final, $this->orig);
     }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.10 2004/04/21 08:17:57 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.11 2004/05/13 15:06:32 chuck Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -35,10 +35,10 @@
   </maintainers>
 
   <release>
-    <version>0.0.2</version>
-    <state>alpha</state>
-    <date>2004-03-16</date>
-    <notes>Added xdiff support</notes>
+    <version>0.0.3</version>
+    <date>2004-05-13</date>
+    <state>beta</state>
+    <notes>Renamed final() and orig() methods to avoid conflict with final keyword in PHP5</notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
@@ -78,6 +78,13 @@
   </release>
 
   <changelog>
+    <release>
+      <version>0.0.3</version>
+      <date>2004-05-13</date>
+      <state>alpha</state>
+      <notes>Renamed final() and orig() methods to avoid conflict with final keyword in PHP5</notes>
+    </release>
+
     <release>
       <version>0.0.2</version>
       <date>2004-03-16</date>
