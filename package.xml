@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.8 2004/03/19 18:53:11 chuck Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.9 2004/04/21 03:31:01 chuck Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -9,16 +9,22 @@
 
   <maintainers>
     <maintainer>
-      <user>chuck</user>
+      <user>chagenbu</user>
       <role>lead</role>
       <name>Chuck Hagenbuch</name>
       <email>chuck@horde.org</email>
     </maintainer>
     <maintainer>
       <user>jon</user>
-      <role>developer</role>
+      <role>lead</role>
       <name>Jon Parise</name>
       <email>jon@horde.org</email>
+    </maintainer>
+    <maintainer>
+      <user>pmjones</user>
+      <role>lead</role>
+      <name>Paul M Jones</name>
+      <email>pmjones@memphis.edu</email>
     </maintainer>
   </maintainers>
 
