@@ -6,7 +6,7 @@
  * that this class be customized via inheritance, to obtain fancier
  * outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.3 2004/06/12 14:13:53 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.4 2004/09/15 04:59:59 chuck Exp $
  *
  * @package Text_Diff
  */
@@ -27,6 +27,16 @@ class Text_Diff_Renderer {
      * may want to set this to other values.
      */
     var $_trailing_context_lines = 0;
+
+    function Text_Diff_Renderer($params = array())
+    {
+        foreach ($params as $param => $value) {
+            $v = '_' . $param;
+            if (isset($this->$v)) {
+                $this->$v = $value;
+            }
+        }
+    }
 
     /**
      * Render a diff.
