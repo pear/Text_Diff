@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.10 2004/11/01 11:51:15 mdjukic Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11 2004/12/07 19:26:19 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -196,7 +196,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.10 2004/11/01 11:51:15 mdjukic Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11 2004/12/07 19:26:19 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -468,7 +468,7 @@ class Text_Diff_Engine_native {
         for ($chunk = 0; $chunk < $nchunks; $chunk++) {
             if ($chunk > 0) {
                 for ($i = 0; $i <= $this->lcs; $i++) {
-                    $ymids[$i][$chunk-1] = $this->seq[$i];
+                    $ymids[$i][$chunk - 1] = $this->seq[$i];
                 }
             }
 
@@ -483,7 +483,7 @@ class Text_Diff_Engine_native {
                     if (empty($this->in_seq[$y])) {
                         $k = $this->_lcsPos($y);
                         assert($k > 0);
-                        $ymids[$k] = $ymids[$k-1];
+                        $ymids[$k] = $ymids[$k - 1];
                         break;
                     }
                 }
@@ -499,7 +499,7 @@ class Text_Diff_Engine_native {
                     } elseif (empty($this->in_seq[$y])) {
                         $k = $this->_lcsPos($y);
                         assert($k > 0);
-                        $ymids[$k] = $ymids[$k-1];
+                        $ymids[$k] = $ymids[$k - 1];
                     }
                 }
             }
