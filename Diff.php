@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.8 2004/10/13 09:30:20 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.9 2004/10/27 18:10:20 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -196,7 +196,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.8 2004/10/13 09:30:20 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.9 2004/10/27 18:10:20 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -228,14 +228,14 @@ class Text_MappedDiff extends Text_Diff {
         parent::Text_Diff($mapped_from_lines, $mapped_to_lines);
 
         $xi = $yi = 0;
-        for ($i = 0; $i < count($this->edits); $i++) {
-            $orig = &$this->edits[$i]->orig;
+        for ($i = 0; $i < count($this->_edits); $i++) {
+            $orig = &$this->_edits[$i]->orig;
             if (is_array($orig)) {
                 $orig = array_slice($from_lines, $xi, count($orig));
                 $xi += count($orig);
             }
 
-            $final = &$this->edits[$i]->final;
+            $final = &$this->_edits[$i]->final;
             if (is_array($final)) {
                 $final = array_slice($to_lines, $yi, count($final));
                 $yi += count($final);
