@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.2 2004/01/09 20:22:05 chuck Exp $ -->
+<!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
+<package version="1.0">
+  <name>Text_Diff</name>
+  <summary>Engine for performing and rendering text diffs</summary>
+  <description>This package provides a text-based diff engine and renderers for multiple diff output formats.</description>
+  <license>LGPL</license>
+
+  <maintainers>
+    <maintainer>
+      <user>chuck</user>
+      <role>lead</role>
+      <name>Chuck Hagenbuch</name>
+      <email>chuck@horde.org</email>
+    </maintainer>
+  </maintainers>
+
+  <release>
+    <version>0.0.1</version>
+    <state>alpha</state>
+    <date>2004-01-09</date>
+    <notes>Initial package release</notes>
+
+    <filelist>
+      <dir role="php" baseinstalldir="/Text" name="Diff">
+        <file name="Diff.php" />
+        <file name="Renderer.php" />
+	    <dir role="php" name="Renderer">
+	      <file name="unified.php" />
+	    </dir>
+      </dir>
+    </filelist>
+
+    <deps>
+      <dep type="php" rel="ge" version="4.2.0+" />
+    </deps>
+
+    <provides type="class" name="Text_Diff" />
+    <provides type="class" name="Text_Diff_Renderer" />
+
+  </release>
+
+  <changelog>
+    <release>
+      <version>0.0.1</version>
+      <date>2004-01-09</date>
+      <state>alpha</state>
+      <notes>Initial package release</notes>
+    </release>
+  </changelog>
+
+</package>

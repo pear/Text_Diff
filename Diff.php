@@ -5,7 +5,13 @@
  * General API for generating and formatting diffs - the differences
  * between two sequences of strings.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.1 2004/01/09 20:14:29 chuck Exp $
+ * The PHP diff code used in this package was originally written by
+ * Geoffrey T. Dairiki and is used with his permission.
+ *
+ * $Horde: framework/Text_Diff/Diff.php,v 1.2 2004/01/09 20:22:05 chuck Exp $
+ *
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  */
 class Text_Diff {
 
@@ -171,10 +177,13 @@ class Text_Diff {
  * ftp://gnudist.gnu.org/pub/gnu/diffutils/diffutils-2.7.tar.gz
  *
  * Some ideas (subdivision by NCHUNKS > 2, and some optimizations) are
- * from Geoffrey T. Dairiki <dairiki@dairiki.org>.
+ * from Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP
+ * version of this code was writting by him, and is used/adapted with
+ * his permission.
  *
- * @author Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access private
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ * @package Text_Diff
+ * @access  private
  */
 class Text_Diff_Engine {
 
@@ -299,7 +308,7 @@ class Text_Diff_Engine {
 
         if ($xlim - $xoff > $ylim - $yoff) {
             // Things seems faster (I'm not sure I understand why)
-            // when the shortest sequence in X.
+            // when the shortest sequence is in X.
             $flip = true;
             list ($xoff, $xlim, $yoff, $ylim)
                 = array($yoff, $ylim, $xoff, $xlim);
@@ -587,6 +596,11 @@ class Text_Diff_Engine {
 
 }
 
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ * @access  private
+ */
 class Text_Diff_Op {
 
     var $orig;
@@ -609,6 +623,11 @@ class Text_Diff_Op {
 
 }
 
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ * @access  private
+ */
 class Text_Diff_Op_copy extends Text_Diff_Op {
 
     function Text_Diff_Op_copy($orig, $final = false)
@@ -627,6 +646,11 @@ class Text_Diff_Op_copy extends Text_Diff_Op {
 
 }
 
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ * @access  private
+ */
 class Text_Diff_Op_delete extends Text_Diff_Op {
 
     function Text_Diff_Op_delete($lines)
@@ -642,6 +666,11 @@ class Text_Diff_Op_delete extends Text_Diff_Op {
 
 }
 
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ * @access  private
+ */
 class Text_Diff_Op_add extends Text_Diff_Op {
 
     function Text_Diff_Op_add($lines)
@@ -657,6 +686,11 @@ class Text_Diff_Op_add extends Text_Diff_Op {
 
 }
 
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ * @access  private
+ */
 class Text_Diff_Op_change extends Text_Diff_Op {
 
     function Text_Diff_Op_change($orig, $final)
