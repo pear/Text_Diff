@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.6 2004/03/16 08:04:41 jon Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.7 2004/03/16 16:29:44 jon Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -48,6 +48,7 @@
       <dir role="test" name="tests">
         <file name="1.txt" />
         <file name="2.txt" />
+        <file name="diff.phpt" />
         <file name="unified.phpt" />
       </dir>
     </filelist>
