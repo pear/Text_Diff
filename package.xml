@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.15 2004/09/15 17:59:39 chuck Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.16 2004/10/13 09:34:23 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
   <summary>Engine for performing and rendering text diffs</summary>
-  <description>This package provides a text-based diff engine and renderers for multiple diff output formats.</description>
+  <description>This package provides a text-based diff engine and renderers
+  for multiple diff output formats.</description>
   <license>LGPL</license>
 
   <maintainers>
@@ -36,11 +37,13 @@
 
   <release>
     <version>0.0.4</version>
-    <date>2004-09-15</date>
+    <date>2004-10-13</date>
     <state>beta</state>
     <notes>
       - Generalized Diff Renderer parameter handling.
       - Added an inline renderer contributed by Ciprian Popovici (ciprian@zuavra.net).
+      - Fixed PHPDoc.
+      - Fixed a PHP 5 incompatibility.
     </notes>
 
     <filelist>
@@ -85,11 +88,13 @@
   <changelog>
     <release>
       <version>0.0.4</version>
-      <date>2004-09-15</date>
+      <date>2004-10-13</date>
       <state>beta</state>
       <notes>
         - Generalized Diff Renderer parameter handling.
         - Added an inline renderer contributed by Ciprian Popovici (ciprian@zuavra.net).
+        - Fixed PHPDoc.
+        - Fixed a PHP 5 incompatibility.
         </notes>
     </release>
 
