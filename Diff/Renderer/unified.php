@@ -1,9 +1,10 @@
+<?php
 /**
- * "Unified" diff formatter.
+ * "Unified" diff renderer.
  *
- * This class formats the diff in classic "unified diff" format.
+ * This class renders the diff in classic "unified diff" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.1 2004/01/09 20:14:29 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.2 2004/01/09 21:46:30 chuck Exp $
  *
  * @package Text_Diff
  */

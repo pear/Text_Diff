@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by
  * Geoffrey T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.2 2004/01/09 20:22:05 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.3 2004/01/09 21:46:29 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -27,8 +27,19 @@ class Text_Diff {
      */
     function Text_Diff($from_lines, $to_lines)
     {
-        $eng = &new Text_Diff_Engine();
-        $this->_edits = $eng->diff($from_lines, $to_lines);
+        array_walk($from_lines, array($this, '_trimNewlines'));
+        array_walk($to_lines, array($this, '_trimNewlines'));
+
+        $engine = &new Text_Diff_Engine();
+        $this->_edits = $engine->diff($from_lines, $to_lines);
+    }
+
+    /**
+     * Return the array of differences.
+     */
+    function getDiff()
+    {
+        return $this->_edits;
     }
 
     /**
@@ -125,6 +136,18 @@ class Text_Diff {
             }
         }
         return $lines;
+    }
+
+    /**
+     * Remove trailing newlines from a line of text. This is meant to
+     * be used with array_walk().
+     *
+     * @param string  &$line  The line to trim.
+     * @param integer $key    The index of the line in the array. Not used.
+     */
+    function _trimNewlines(&$line, $key)
+    {
+        $line = str_replace(array("\n", "\r", "\r\n"), '', $line);
     }
 
     /**

@@ -1,12 +1,12 @@
 <?php
 /**
- * A class to format Diffs.
+ * A class to render Diffs in different formats.
  *
- * This class formats the diff in classic diff format.
- * It is intended that this class be customized via inheritance,
- * to obtain fancier outputs.
+ * This class renders the diff in classic diff format. It is intended
+ * that this class be customized via inheritance, to obtain fancier
+ * outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.1 2004/01/09 20:14:29 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.2 2004/01/09 21:46:30 chuck Exp $
  *
  * @package Text_Diff
  */
@@ -29,12 +29,13 @@ class Text_Diff_Renderer {
     var $_trailing_context_lines = 0;
 
     /**
-     * Format a diff.
+     * Render a diff.
      *
-     * @param $diff object A Diff object.
-     * @return string The formatted output.
+     * @param $diff object Text_Diff  A Text_Diff object.
+     *
+     * @return string  The formatted output.
      */
-    function format($diff)
+    function render($diff)
     {
         $xi = $yi = 1;
         $block = false;
@@ -45,7 +46,7 @@ class Text_Diff_Renderer {
 
         $this->_startDiff();
 
-        foreach ($diff->edits as $edit) {
+        foreach ($diff->getDiff() as $edit) {
             if (is_a($edit, 'Text_Diff_Op_copy')) {
                 if (is_array($block)) {
                     if (count($edit->orig) <= $nlead + $ntrail) {
@@ -146,7 +147,7 @@ class Text_Diff_Renderer {
 
     function _startBlock($header)
     {
-        echo $header;
+        echo $header . "\n";
     }
 
     function _endBlock()
@@ -156,7 +157,7 @@ class Text_Diff_Renderer {
     function _lines($lines, $prefix = ' ')
     {
         foreach ($lines as $line) {
-            echo "$prefix $line\n";
+            echo "$prefix$line\n";
         }
     }
 
