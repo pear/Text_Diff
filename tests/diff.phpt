@@ -2,9 +2,9 @@
 Text_Diff: Basic diff operation
 --FILE--
 <?php
-include_once 'Diff.php';
-include_once 'Diff/Renderer.php';
-include_once 'Diff/Renderer/unified.php';
+include_once 'Text/Diff.php';
+include_once 'Text/Diff/Renderer.php';
+include_once 'Text/Diff/Renderer/unified.php';
 
 $lines1 = file(dirname(__FILE__) . '/1.txt');
 $lines2 = file(dirname(__FILE__) . '/2.txt');
@@ -12,6 +12,7 @@ $lines2 = file(dirname(__FILE__) . '/2.txt');
 $diff = &new Text_Diff($lines1, $lines2);
 
 print_r($diff);
+?>
 --EXPECT--
 text_diff Object
 (
@@ -31,19 +32,13 @@ text_diff Object
 
                 )
 
-            [1] => text_diff_op_delete Object
+            [1] => text_diff_op_change Object
                 (
                     [orig] => Array
                         (
                             [0] => This line is different in 1.txt
                         )
 
-                    [final] => 
-                )
-
-            [2] => text_diff_op_add Object
-                (
-                    [orig] => 
                     [final] => Array
                         (
                             [0] => This line is different in 2.txt
@@ -51,7 +46,7 @@ text_diff Object
 
                 )
 
-            [3] => text_diff_op_copy Object
+            [2] => text_diff_op_copy Object
                 (
                     [orig] => Array
                         (
