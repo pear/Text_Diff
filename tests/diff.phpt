@@ -6,8 +6,8 @@ include_once 'Diff.php';
 include_once 'Diff/Renderer.php';
 include_once 'Diff/Renderer/unified.php';
 
-$lines1 = file(dirname(__FILE__) . DIRECTORY_SEPARATOR . '1.txt');
-$lines2 = file(dirname(__FILE__) . DIRECTORY_SEPARATOR . '2.txt');
+$lines1 = file(dirname(__FILE__) . '/1.txt');
+$lines2 = file(dirname(__FILE__) . '/2.txt');
 
 $diff = &new Text_Diff($lines1, $lines2);
 
