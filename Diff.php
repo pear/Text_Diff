@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.9 2004/10/27 18:10:20 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.10 2004/11/01 11:51:15 mdjukic Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -196,7 +196,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.9 2004/10/27 18:10:20 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.10 2004/11/01 11:51:15 mdjukic Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -313,7 +313,7 @@ class Text_Diff_Engine_xdiff {
  *
  * Some ideas (subdivision by NCHUNKS > 2, and some optimizations) are from
  * Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP version of this
- * code was writting by him, and is used/adapted with his permission.
+ * code was written by him, and is used/adapted with his permission.
  *
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  * @package Text_Diff
