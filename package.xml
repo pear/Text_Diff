@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.7 2004/03/16 16:29:44 jon Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.8 2004/03/19 18:53:11 chuck Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -30,6 +30,7 @@
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
+      <file role="php" baseinstalldir="/Text" name="Diff3.php" />
       <dir role="php" baseinstalldir="/Text" name="Diff">
         <file name="Renderer.php" />
 	    <dir role="php" name="Renderer">
@@ -59,8 +60,9 @@
     </deps>
 
     <provides type="class" name="Text_Diff" />
+    <provides type="class" name="Text_Diff3" />
+    <provides type="class" name="Text_MappedDiff" />
     <provides type="class" name="Text_Diff_Renderer" />
-
   </release>
 
   <changelog>

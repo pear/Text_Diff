@@ -8,17 +8,21 @@
  * The PHP diff code used in this package was originally written by
  * Geoffrey T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.4 2004/03/16 07:24:47 jon Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.5 2004/03/19 18:53:11 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  */
 class Text_Diff {
 
+    /**
+     * Array of changes.
+     *
+     * @var array $_edits
+     */
     var $_edits;
 
     /**
-     * Constructor.
      * Computes diff between sequences of strings.
      *
      * @param $from_lines array An array of strings.
@@ -191,6 +195,56 @@ class Text_Diff {
 }
 
 /**
+ * $Horde: framework/Text_Diff/Diff.php,v 1.5 2004/03/19 18:53:11 chuck Exp $
+ *
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ */
+class Text_MappedDiff extends Text_Diff {
+
+    /**
+     * Computes a diff between sequences of strings.
+     *
+     * This can be used to compute things like case-insensitve diffs,
+     * or diffs which ignore changes in white-space.
+     *
+     * @param $from_lines        array  An array of strings.
+     * @param $to_lines          array  An array of strings.
+     * @param $mapped_from_lines array  This array should
+     *     have the same size number of elements as $from_lines.
+     *     The elements in $mapped_from_lines and
+     *     $mapped_to_lines are what is actually compared
+     *     when computing the diff.
+     * @param $mapped_to_lines   array  This array should
+     *     have the same number of elements as $to_lines.
+     */
+    function Text_MappedDiff($from_lines, $to_lines,
+                             $mapped_from_lines, $mapped_to_lines)
+    {
+        assert(count($from_lines) == count($mapped_from_lines));
+        assert(count($to_lines) == count($mapped_to_lines));
+
+        parent::Text_Diff($mapped_from_lines, $mapped_to_lines);
+
+        $xi = $yi = 0;
+        for ($i = 0; $i < count($this->edits); $i++) {
+            $orig = &$this->edits[$i]->orig;
+            if (is_array($orig)) {
+                $orig = array_slice($from_lines, $xi, count($orig));
+                $xi += count($orig);
+            }
+
+            $final = &$this->edits[$i]->final;
+            if (is_array($final)) {
+                $final = array_slice($to_lines, $yi, count($final));
+                $yi += count($final);
+            }
+        }
+    }
+
+}
+
+/**
  * Class used internally by Diff to actually compute the diffs.  This class
  * uses the xdiff PECL package (http://pecl.php.net/package/xdiff) to compute
  * the differences between the two input arrays.
@@ -199,8 +253,8 @@ class Text_Diff {
  * @package Text_Diff
  * @access  private
  */
-class Text_Diff_Engine_xdiff
-{
+class Text_Diff_Engine_xdiff {
+
     function diff($from_lines, $to_lines)
     {
         /* Convert the two input arrays into strings for xdiff processing. */
@@ -211,16 +265,16 @@ class Text_Diff_Engine_xdiff
         $diff = xdiff_string_diff($from_string, $to_string, count($to_lines));
         $diff = explode("\n", $diff);
 
-        /*
-         * Walk through the diff one line at a time.  We build the $edits array
-         * of diff operations by reading the first character of the xdiff
-         * output (which is in the "unified diff" format).
+        /* Walk through the diff one line at a time.  We build the
+         * $edits array of diff operations by reading the first
+         * character of the xdiff output (which is in the "unified
+         * diff" format).
          *
-         * Note that we don't have enough information to detect "changed" lines
-         * using this approach, so we can't add Text_Diff_Op_changed instances
-         * to the $edits array.  The result is still perfectly valid, albeit a
-         * little less descriptive and efficient.
-         */
+         * Note that we don't have enough information to detect
+         * "changed" lines using this approach, so we can't add
+         * Text_Diff_Op_changed instances to the $edits array.  The
+         * result is still perfectly valid, albeit a little less
+         * descriptive and efficient. */
         $edits = array();
         foreach ($diff as $line) {
             switch ($line[0]) {
@@ -240,6 +294,7 @@ class Text_Diff_Engine_xdiff
 
         return $edits;
     }
+
 }
 
 /**
@@ -340,8 +395,9 @@ class Text_Diff_Engine_native {
                 $copy[] = $from_lines[$xi++];
                 ++$yi;
             }
-            if ($copy)
+            if ($copy) {
                 $edits[] = &new Text_Diff_Op_copy($copy);
+            }
 
             // Find deletes & adds.
             $delete = array();
