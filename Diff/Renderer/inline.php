@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4 2004/10/21 19:23:54 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.5 2005/03/07 14:58:30 jan Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -55,9 +55,9 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
     function _lines($lines, $prefix = ' ')
     {
         if ($this->_split_level == 'words') {
-            echo implode($lines, ' ');
+            return implode($lines, ' ');
         } else {
-            echo implode($lines, "\n") . "\n";
+            return implode($lines, "\n") . "\n";
         }
     }
 
@@ -68,21 +68,21 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
 
     function _startBlock($header)
     {
-        echo $header;
+        return $header;
     }
 
     function _added($lines)
     {
         array_unshift($lines, $this->_ins_prefix);
         array_push($lines, $this->_ins_suffix);
-        $this->_lines($lines);
+        return $this->_lines($lines);
     }
 
     function _deleted($lines)
     {
         array_unshift($lines, $this->_del_prefix);
         array_push($lines, $this->_del_suffix);
-        $this->_lines($lines);
+        return $this->_lines($lines);
     }
 
     function _changed($orig, $final)
@@ -90,10 +90,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         /* If we've already split on words, don't try to do so again - just
          * display. */
         if ($this->_split_level == 'words') {
-            $this->_deleted($orig);
-            $this->_added($final);
-            echo "\n";
-            return;
+            return $this->_deleted($orig) . $this->_added($final) . "\n";
         }
 
         $text1 = implode("\n", $orig);
@@ -120,13 +117,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         $renderer = &new Text_Diff_Renderer_inline(array('split_level' => 'words'));
 
         /* Run the diff and get the output. */
-        ob_start();
-        $renderer->render($diff);
-        $output = ob_get_contents();
-        ob_end_clean();
-
-        /* Restore newlines and display the result. */
-        echo str_replace($nl, "\n", $output);
+        return str_replace($nl, "\n", $renderer->render($diff));
     }
 
 }

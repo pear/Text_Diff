@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.17 2004/10/28 01:28:54 chuck Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.18 2005/03/07 14:58:30 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -39,8 +39,8 @@
     <version>0.0.5</version>
     <date>2004-10-31</date>
     <state>beta</state>
-    <notes>
-      - Fixed variable name in Text_MappedDiff.
+    <notes>* Fixed variable name in Text_MappedDiff.
+* Removed output buffering code, fixed bug 3730.
     </notes>
 
     <filelist>
