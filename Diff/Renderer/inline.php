@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.3 2004/10/13 09:30:20 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4 2004/10/21 19:23:54 chuck Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -119,8 +119,14 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
          * FIXME: should propogate other parameters here too. */
         $renderer = &new Text_Diff_Renderer_inline(array('split_level' => 'words'));
 
+        /* Run the diff and get the output. */
+        ob_start();
+        $renderer->render($diff);
+        $output = ob_get_contents();
+        ob_end_clean();
+
         /* Restore newlines and display the result. */
-        echo str_replace($nl, "\n", $renderer->render($diff));
+        echo str_replace($nl, "\n", $output);
     }
 
 }
