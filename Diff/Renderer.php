@@ -6,7 +6,7 @@
  * that this class be customized via inheritance, to obtain fancier
  * outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.2 2004/01/09 21:46:30 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.3 2004/06/12 14:13:53 chuck Exp $
  *
  * @package Text_Diff
  */
@@ -97,7 +97,7 @@ class Text_Diff_Renderer {
     {
         $this->_startBlock($this->_blockHeader($xbeg, $xlen, $ybeg, $ylen));
         foreach ($edits as $edit) {
-            switch (get_class($edit)) {
+            switch (strtolower(get_class($edit))) {
             case 'text_diff_op_copy':
                 $this->_context($edit->orig);
                 break;
@@ -117,6 +117,7 @@ class Text_Diff_Renderer {
             default:
                 trigger_error("Unknown edit type", E_USER_ERROR);
             }
+
             $this->_endBlock();
         }
     }
