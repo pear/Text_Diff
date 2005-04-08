@@ -10,52 +10,51 @@ $lines1 = file(dirname(__FILE__) . '/1.txt');
 $lines2 = file(dirname(__FILE__) . '/2.txt');
 
 $diff = &new Text_Diff($lines1, $lines2);
-
-print_r($diff);
+echo strtolower(print_r($diff, true));
 ?>
 --EXPECT--
-text_diff Object
+text_diff object
 (
-    [_edits] => Array
+    [_edits] => array
         (
-            [0] => text_diff_op_copy Object
+            [0] => text_diff_op_copy object
                 (
-                    [orig] => Array
+                    [orig] => array
                         (
-                            [0] => This line is the same.
+                            [0] => this line is the same.
                         )
 
-                    [final] => Array
+                    [final] => array
                         (
-                            [0] => This line is the same.
+                            [0] => this line is the same.
                         )
 
                 )
 
-            [1] => text_diff_op_change Object
+            [1] => text_diff_op_change object
                 (
-                    [orig] => Array
+                    [orig] => array
                         (
-                            [0] => This line is different in 1.txt
+                            [0] => this line is different in 1.txt
                         )
 
-                    [final] => Array
+                    [final] => array
                         (
-                            [0] => This line is different in 2.txt
+                            [0] => this line is different in 2.txt
                         )
 
                 )
 
-            [2] => text_diff_op_copy Object
+            [2] => text_diff_op_copy object
                 (
-                    [orig] => Array
+                    [orig] => array
                         (
-                            [0] => This line is the same.
+                            [0] => this line is the same.
                         )
 
-                    [final] => Array
+                    [final] => array
                         (
-                            [0] => This line is the same.
+                            [0] => this line is the same.
                         )
 
                 )
