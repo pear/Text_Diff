@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4.10.1 2005/03/22 09:54:05 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4.10.2 2005/04/28 23:08:23 selsky Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -78,7 +78,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
             $lines[count($lines) - 1] .= $this->_ins_suffix;
         } else {
             array_unshift($lines, $this->_ins_prefix);
-            array_push($lines, $this->_ins_suffix);
+            $lines[] = $this->_ins_suffix;
         }
         return $this->_lines($lines);
     }
@@ -90,7 +90,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
             $lines[count($lines) - 1] .= $this->_del_suffix;
         } else {
             array_unshift($lines, $this->_del_prefix);
-            array_push($lines, $this->_del_suffix);
+            $lines[] = $this->_del_suffix;
         }
         return $this->_lines($lines);
     }
