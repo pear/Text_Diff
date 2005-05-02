@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.9 2005/05/02 03:10:34 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.10 2005/05/02 19:44:53 chuck Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -55,7 +55,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
     function _lines($lines, $prefix = ' ')
     {
         if ($this->_split_level == 'words') {
-            return implode($lines, ' ') . ' ';
+            return implode($lines);
         } else {
             return implode($lines, "\n") . "\n";
         }
@@ -90,34 +90,50 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         /* If we've already split on words, don't try to do so again - just
          * display. */
         if ($this->_split_level == 'words') {
-            return substr($this->_deleted($orig), 0, -1) . $this->_added($final);
+            $prefix = '';
+            while (substr($orig[0], 0, 1) == substr($final[0], 0, 1)) {
+                $prefix .= substr($orig[0], 0, 1);
+                $orig[0] = substr($orig[0], 1);
+                $final[0] = substr($final[0], 1);
+            }
+            return $prefix . $this->_deleted($orig) . $this->_added($final);
         }
 
         $text1 = implode("\n", $orig);
         $text2 = implode("\n", $final);
 
-        /* Pad to make sure we can split on word boundaries. */
-        $text1 = str_replace("\n", " \n", $text1);
-        $text2 = str_replace("\n", " \n", $text2);
-
         /* Non-printing newline marker. */
         $nl = "\0";
 
-        /* Save newlines. */
-        $text1 = str_replace("\n", $nl, $text1);
-        $text2 = str_replace("\n", $nl, $text2);
+        /* We want to split on word boundaries, but we need to
+         * preserve whitespace as well. Therefore we split on words,
+         * but include all blocks of whitespace in the wordlist. */
+        $diff = &new Text_Diff($this->_splitOnWords($text1, $nl),
+                               $this->_splitOnWords($text2, $nl));
 
-        /* Create the diff, splitting on word boundaries (loosely defined as
-         * spaces). */
-        $diff = &new Text_Diff(explode(' ', $text1),
-                               explode(' ', $text2));
-
-        /* Get the diff in inline format.
-         * FIXME: should propagate other parameters here too. */
-        $renderer = &new Text_Diff_Renderer_inline(array('split_level' => 'words'));
+        /* Get the diff in inline format. */
+        $renderer = &new Text_Diff_Renderer_inline(array_merge($this->getParams(),
+                                                               array('split_level' => 'words')));
 
         /* Run the diff and get the output. */
-        return str_replace($nl, "\n", substr($renderer->render($diff), 0, -1)) . "\n";
+        return str_replace($nl, "\n", $prefix . $renderer->render($diff)) . "\n";
+    }
+
+    function _splitOnWords($string, $newlineEscape = "\n")
+    {
+        $words = array();
+        $length = strlen($string);
+        $pos = 0;
+
+        while ($pos < $length) {
+            // Eat a word with any preceding whitespace.
+            $spaces = strspn($string, " \n", $pos);
+            $nextpos = strcspn($string, " \n", $pos + $spaces);
+            $words[] = str_replace("\n", $newlineEscape, substr($string, $pos, $spaces + $nextpos));
+            $pos += $spaces + $nextpos;
+        }
+
+        return $words;
     }
 
 }
