@@ -30,9 +30,9 @@ echo $renderer->render($diff);
 ?>
 --EXPECT--
 This is a test.
-Adding random text to simulate files.<ins>
-Inserting a line. </ins>
+Adding random text to simulate files.
+<ins>Inserting a line.</ins>
 Various Content.
-<del> More Content. </del><ins> Replacing content. </ins>
-Testing<del> diff </del><ins> similarities </ins> and renderer.<ins>
-Append content. </ins>
+<del>More Content.</del><ins>Replacing content.</ins>
+Testing <del>diff</del><ins>similarities</ins> and renderer.<ins>
+Append content.</ins>
