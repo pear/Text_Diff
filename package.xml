@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.2 2005/04/08 03:52:14 chuck Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.3 2005/05/02 03:13:38 chuck Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
   <summary>Engine for performing and rendering text diffs</summary>
-  <description>This package provides a text-based diff engine and renderers
-  for multiple diff output formats.</description>
+  <description>This package provides a text-based diff engine and renderers for multiple diff output formats.</description>
   <license>LGPL</license>
 
   <maintainers>
@@ -37,10 +36,11 @@
 
   <release>
     <version>0.0.5</version>
-    <date>2005-06-06</date>
+    <date>2004-10-31</date>
     <state>beta</state>
-    <notes>* Fixed multiple calls to _endBlock per block, PEAR bug 4065
-    </notes>
+    <notes>* Fixed variable name in Text_MappedDiff.
+* Removed output buffering code, fixed bug 3730.
+* Fixed multiple calls to _endBlock per block (Bug 4065).</notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
@@ -72,27 +72,17 @@
     </filelist>
 
     <deps>
-      <dep type="php" rel="ge" version="4.2.0+" />
+      <dep type="php" rel="ge" version="4.2.0"/>
       <dep type="ext" rel="has" optional="yes">xdiff</dep>
     </deps>
 
-    <provides type="class" name="Text_Diff" />
-    <provides type="class" name="Text_Diff3" />
-    <provides type="class" name="Text_MappedDiff" />
-    <provides type="class" name="Text_Diff_Renderer" />
+    <provides type="class" name="Text_Diff"/>
+    <provides type="class" name="Text_Diff3"/>
+    <provides type="class" name="Text_MappedDiff"/>
+    <provides type="class" name="Text_Diff_Renderer"/>
   </release>
 
   <changelog>
-    <release>
-      <version>0.0.5</version>
-      <date>2004-10-31</date>
-      <state>beta</state>
-      <notes>
-        * Fixed variable name in Text_MappedDiff.
-        * Removed output buffering code, fixed bug 3730.
-      </notes>
-    </release>
-
     <release>
       <version>0.0.4</version>
       <date>2004-10-13</date>
