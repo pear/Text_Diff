@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.7 2005/03/21 16:52:53 mdjukic Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.8 2005/05/02 03:03:04 chuck Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -55,7 +55,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
     function _lines($lines, $prefix = ' ')
     {
         if ($this->_split_level == 'words') {
-            return implode($lines, ' ');
+            return implode($lines, ' ') . ' ';
         } else {
             return implode($lines, "\n") . "\n";
         }
@@ -90,7 +90,7 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         /* If we've already split on words, don't try to do so again - just
          * display. */
         if ($this->_split_level == 'words') {
-            return $this->_deleted($orig) . $this->_added($final);
+            return substr($this->_deleted($orig), 0, -1) . $this->_added($final);
         }
 
         $text1 = implode("\n", $orig);
