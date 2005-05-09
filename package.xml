@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.4 2005/05/04 07:15:28 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.5 2005/05/09 08:43:36 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -35,22 +35,20 @@
   </maintainers>
 
   <release>
-    <version>0.0.5</version>
-    <date>2004-10-31</date>
+    <version>0.1.0</version>
+    <date>2005-99-99</date>
     <state>beta</state>
-    <notes>* Fixed variable name in Text_MappedDiff.
-* Removed output buffering code, fixed bug 3730.
-* Fixed multiple calls to _endBlock per block (Bug 4065).</notes>
+    <notes></notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
       <file role="php" baseinstalldir="/Text" name="Diff3.php" />
       <dir role="php" baseinstalldir="/Text" name="Diff">
         <file name="Renderer.php" />
-	    <dir role="php" name="Renderer">
-	      <file name="inline.php" />
-	      <file name="unified.php" />
-	    </dir>
+	  <dir role="php" name="Renderer">
+	    <file name="inline.php" />
+	    <file name="unified.php" />
+	  </dir>
       </dir>
 
       <dir role="doc" name="docs">
@@ -85,15 +83,23 @@
 
   <changelog>
     <release>
+      <version>0.0.5</version>
+      <date>2005-05-04</date>
+      <state>beta</state>
+      <notes>* Fixed variable name in Text_MappedDiff.
+  * Removed output buffering code.
+  * Fixed additional empty lines being added with the inline renderer (Bug 3730).
+  * Fixed multiple calls to _endBlock per block (Bug 4065).</notes>
+    </release>
+
+    <release>
       <version>0.0.4</version>
       <date>2004-10-13</date>
       <state>beta</state>
-      <notes>
-        * Generalized Diff Renderer parameter handling.
+      <notes>* Generalized Diff Renderer parameter handling.
         * Added an inline renderer contributed by Ciprian Popovici (ciprian@zuavra.net).
         * Fixed PHPDoc.
-        * Fixed a PHP 5 incompatibility.
-      </notes>
+        * Fixed a PHP 5 incompatibility.</notes>
     </release>
 
     <release>
