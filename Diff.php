@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.1 2005/03/22 09:54:05 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.2 2005/05/26 20:31:47 selsky Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -18,7 +18,7 @@ class Text_Diff {
     /**
      * Array of changes.
      *
-     * @var array $_edits
+     * @var array
      */
     var $_edits;
 
@@ -97,9 +97,9 @@ class Text_Diff {
     /**
      * Computes the length of the Longest Common Subsequence (LCS).
      *
-     * This is mostly for diagnostic purposed.
+     * This is mostly for diagnostic purposes.
      *
-     * @return int  The length of the LCS.
+     * @return integer  The length of the LCS.
      */
     function lcs()
     {
@@ -196,7 +196,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.1 2005/03/22 09:54:05 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.2 2005/05/26 20:31:47 selsky Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -307,7 +307,7 @@ class Text_Diff_Engine_xdiff {
  * More ideas are taken from:
  * http://www.ics.uci.edu/~eppstein/161/960229.html
  *
- * Some ideas (and a bit of code) are from from analyze.c, from GNU
+ * Some ideas (and a bit of code) are taken from analyze.c, of GNU
  * diffutils-2.7, which can be found at:
  * ftp://gnudist.gnu.org/pub/gnu/diffutils/diffutils-2.7.tar.gz
  *
