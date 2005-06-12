@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.25 2005/05/10 08:24:20 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.26 2005/06/12 18:07:53 chuck Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -38,17 +38,17 @@
     <version>0.1.0</version>
     <date>2005-99-99</date>
     <state>beta</state>
-    <notes>.</notes>
+    <notes>* Fix Renderer::getParams() (PEAR Bug #4549)</notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
       <file role="php" baseinstalldir="/Text" name="Diff3.php" />
       <dir role="php" baseinstalldir="/Text" name="Diff">
         <file name="Renderer.php" />
-	  <dir role="php" name="Renderer">
-	    <file name="inline.php" />
-	    <file name="unified.php" />
-	  </dir>
+        <dir role="php" name="Renderer">
+          <file name="inline.php" />
+          <file name="unified.php" />
+        </dir>
       </dir>
 
       <dir role="doc" name="docs">
