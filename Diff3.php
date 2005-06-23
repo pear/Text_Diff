@@ -5,7 +5,7 @@ require_once 'Text/Diff.php';
 /**
  * A class for computing three way diffs.
  *
- * $Horde: framework/Text_Diff/Diff3.php,v 1.2 2004/10/13 09:30:20 jan Exp $
+ * $Horde: framework/Text_Diff/Diff3.php,v 1.2.10.1 2005/06/23 19:57:40 selsky Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -15,7 +15,7 @@ class Text_Diff3 extends Text_Diff {
     /**
      * Conflict counter.
      *
-     * @var integer $_conflictCounter
+     * @var integer
      */
     var $_conflictingBlocks = 0;
 
