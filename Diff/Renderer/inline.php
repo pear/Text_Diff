@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.12 2005/05/04 20:21:31 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.13 2005/06/29 00:21:43 chuck Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -52,15 +52,6 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
      */
     var $_split_level = 'lines';
 
-    function _lines($lines, $prefix = ' ')
-    {
-        if ($this->_split_level == 'words') {
-            return implode('', $lines);
-        } else {
-            return implode("\n", $lines) . "\n";
-        }
-    }
-
     function _blockHeader($xbeg, $xlen, $ybeg, $ylen)
     {
         return $this->_block_header;
@@ -71,18 +62,33 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         return $header;
     }
 
+    function _lines($lines, $prefix = ' ', $encode = true)
+    {
+        if ($encode) {
+            array_walk($lines, array(&$this, '_encode'));
+        }
+
+        if ($this->_split_level == 'words') {
+            return implode('', $lines);
+        } else {
+            return implode("\n", $lines) . "\n";
+        }
+    }
+
     function _added($lines)
     {
+        array_walk($lines, array(&$this, '_encode'));
         $lines[0] = $this->_ins_prefix . $lines[0];
         $lines[count($lines) - 1] .= $this->_ins_suffix;
-        return $this->_lines($lines);
+        return $this->_lines($lines, ' ', false);
     }
 
     function _deleted($lines, $words = false)
     {
+        array_walk($lines, array(&$this, '_encode'));
         $lines[0] = $this->_del_prefix . $lines[0];
         $lines[count($lines) - 1] .= $this->_del_suffix;
-        return $this->_lines($lines);
+        return $this->_lines($lines, ' ', false);
     }
 
     function _changed($orig, $final)
@@ -134,6 +140,11 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
         }
 
         return $words;
+    }
+
+    function _encode(&$string)
+    {
+        $string = htmlspecialchars($string);
     }
 
 }
