@@ -5,7 +5,7 @@ require_once 'Text/Diff.php';
 /**
  * A class for computing three way diffs.
  *
- * $Horde: framework/Text_Diff/Diff3.php,v 1.3 2005/06/23 19:40:18 selsky Exp $
+ * $Horde: framework/Text_Diff/Diff3.php,v 1.4 2005/07/03 05:10:11 selsky Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -136,7 +136,8 @@ class Text_Diff3 extends Text_Diff {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff3_Op {
 
@@ -174,7 +175,8 @@ class Text_Diff3_Op {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff3_Op_copy extends Text_Diff3_Op {
 
@@ -200,7 +202,8 @@ class Text_Diff3_Op_copy extends Text_Diff3_Op {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff3_BlockBuilder {
 
