@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.13 2005/05/26 20:26:06 selsky Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.14 2005/07/03 05:10:11 selsky Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -196,7 +196,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.13 2005/05/26 20:26:06 selsky Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.14 2005/07/03 05:10:11 selsky Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -252,7 +252,8 @@ class Text_MappedDiff extends Text_Diff {
  *
  * @author  Jon Parise <jon@horde.org>
  * @package Text_Diff
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff_Engine_xdiff {
 
@@ -317,7 +318,8 @@ class Text_Diff_Engine_xdiff {
  *
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  * @package Text_Diff
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff_Engine_native {
 
@@ -728,7 +730,8 @@ class Text_Diff_Engine_native {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff_Op {
 
@@ -755,7 +758,8 @@ class Text_Diff_Op {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff_Op_copy extends Text_Diff_Op {
 
@@ -778,7 +782,8 @@ class Text_Diff_Op_copy extends Text_Diff_Op {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff_Op_delete extends Text_Diff_Op {
 
@@ -798,7 +803,8 @@ class Text_Diff_Op_delete extends Text_Diff_Op {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff_Op_add extends Text_Diff_Op {
 
@@ -818,7 +824,8 @@ class Text_Diff_Op_add extends Text_Diff_Op {
 /**
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- * @access  private
+ *
+ * @access private
  */
 class Text_Diff_Op_change extends Text_Diff_Op {
 
