@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.9 2005/07/23 10:32:56 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.10 2005/07/23 10:33:06 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -39,7 +39,8 @@
     <date>2005-99-99</date>
     <state>beta</state>
     <notes>* Fix Renderer::getParams() (PEAR Bug #4549)
-* Encode HTML entities in the inline renderer (Horde Bug #2181)</notes>
+* Encode HTML entities in the inline renderer (Horde Bug #2181)
+* Fix endless loop in inline renderer with certain whitespaces (PEAR Bug #4879)</notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
