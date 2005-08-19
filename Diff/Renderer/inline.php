@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4.10.7 2005/07/22 19:45:27 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4.10.8 2005/08/19 12:18:44 jan Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -135,8 +135,8 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
 
         while ($pos < $length) {
             // Eat a word with any preceding whitespace.
-            $spaces = strspn($string, " \n", $pos);
-            $nextpos = strcspn($string, " \n", $pos + $spaces);
+            $spaces = strspn(substr($string, $pos), " \n");
+            $nextpos = strcspn(substr($string, $pos + $spaces), " \n");
             $words[] = str_replace("\n", $newlineEscape, substr($string, $pos, $spaces + $nextpos));
             $pos += $spaces + $nextpos;
         }
