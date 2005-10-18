@@ -4,7 +4,7 @@
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4.10.8 2005/08/19 12:18:44 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.4.10.9 2005/10/18 11:01:31 jan Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff

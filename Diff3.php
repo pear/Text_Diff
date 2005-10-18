@@ -5,7 +5,7 @@ require_once 'Text/Diff.php';
 /**
  * A class for computing three way diffs.
  *
- * $Horde: framework/Text_Diff/Diff3.php,v 1.2.10.2 2005/07/03 05:14:18 selsky Exp $
+ * $Horde: framework/Text_Diff/Diff3.php,v 1.2.10.3 2005/10/18 11:01:31 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
