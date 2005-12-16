@@ -5,7 +5,7 @@
  * This class renders the diff in classic diff format. It is intended that
  * this class be customized via inheritance, to obtain fancier outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.5.10.6 2005/10/18 11:01:31 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.5.10.7 2005/12/16 11:44:00 jan Exp $
  *
  * @package Text_Diff
  */
@@ -75,10 +75,12 @@ class Text_Diff_Renderer {
 
         $output = $this->_startDiff();
 
-        foreach ($diff->getDiff() as $edit) {
+        $diffs = $diff->getDiff();
+        foreach ($diffs as $i => $edit) {
             if (is_a($edit, 'Text_Diff_Op_copy')) {
                 if (is_array($block)) {
-                    if (count($edit->orig) <= $nlead + $ntrail) {
+                    $keep = $i == count($diffs) - 1 ? $ntrail : $nlead + $ntrail;
+                    if (count($edit->orig) <= $keep) {
                         $block[] = $edit;
                     } else {
                         if ($ntrail) {
