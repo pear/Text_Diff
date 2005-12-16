@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.31 2005/08/19 12:11:51 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.32 2005/12/16 11:07:33 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -35,10 +35,11 @@
   </maintainers>
 
   <release>
-    <version>0.1.1</version>
-    <date>2005-08-19</date>
+    <version>0.1.2</version>
+    <date>2005-12-16</date>
     <state>beta</state>
-    <notes>* Restore compatibility with PHP 4.2.0 (PEAR Bug #5152).</notes>
+    <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
+* Fix too many trailing context lines for the last diff chunk. (PEAR Bug #6251).</notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
@@ -66,6 +67,7 @@
         <file name="inline.phpt" />
         <file name="inline2.phpt" />
         <file name="pear_bug4879.phpt" />
+        <file name="pear_bug6251.phpt" />
         <file name="unified.phpt" />
         <file name="unified2.phpt" />
       </dir>
@@ -83,6 +85,13 @@
   </release>
 
   <changelog>
+    <release>
+      <version>0.1.1</version>
+      <date>2005-08-19</date>
+      <state>beta</state>
+      <notes>* Restore compatibility with PHP 4.2.0 (PEAR Bug #5152).</notes>
+    </release>
+
     <release>
       <version>0.1.0</version>
       <date>2005-08-16</date>
