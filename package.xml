@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.35 2006/01/06 16:13:41 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.36 2006/01/06 16:14:32 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -76,6 +76,7 @@
         <file name="inline2.phpt" />
         <file name="pear_bug4879.phpt" />
         <file name="pear_bug6251.phpt" />
+        <file name="pear_bug6428.phpt" />
         <file name="string.phpt" />
         <file name="unified.patch" />
         <file name="unified.phpt" />
