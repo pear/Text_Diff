@@ -42,7 +42,7 @@ class Text_Diff_Engine_native {
 
         // Skip leading common lines.
         for ($skip = 0; $skip < $n_from && $skip < $n_to; $skip++) {
-            if ($from_lines[$skip] != $to_lines[$skip]) {
+            if ($from_lines[$skip] !== $to_lines[$skip]) {
                 break;
             }
             $this->xchanged[$skip] = $this->ychanged[$skip] = false;
@@ -51,7 +51,7 @@ class Text_Diff_Engine_native {
         // Skip trailing common lines.
         $xi = $n_from; $yi = $n_to;
         for ($endskip = 0; --$xi > $skip && --$yi > $skip; $endskip++) {
-            if ($from_lines[$xi] != $to_lines[$yi]) {
+            if ($from_lines[$xi] !== $to_lines[$yi]) {
                 break;
             }
             $this->xchanged[$xi] = $this->ychanged[$yi] = false;
