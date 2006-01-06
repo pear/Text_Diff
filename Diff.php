@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.5 2005/12/01 10:30:14 selsky Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.6 2006/01/06 16:10:43 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -196,7 +196,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.5 2005/12/01 10:30:14 selsky Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.6 2006/01/06 16:10:43 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -337,7 +337,7 @@ class Text_Diff_Engine_native {
 
         // Skip leading common lines.
         for ($skip = 0; $skip < $n_from && $skip < $n_to; $skip++) {
-            if ($from_lines[$skip] != $to_lines[$skip]) {
+            if ($from_lines[$skip] !== $to_lines[$skip]) {
                 break;
             }
             $this->xchanged[$skip] = $this->ychanged[$skip] = false;
@@ -346,7 +346,7 @@ class Text_Diff_Engine_native {
         // Skip trailing common lines.
         $xi = $n_from; $yi = $n_to;
         for ($endskip = 0; --$xi > $skip && --$yi > $skip; $endskip++) {
-            if ($from_lines[$xi] != $to_lines[$yi]) {
+            if ($from_lines[$xi] !== $to_lines[$yi]) {
                 break;
             }
             $this->xchanged[$xi] = $this->ychanged[$yi] = false;
