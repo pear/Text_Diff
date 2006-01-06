@@ -18,6 +18,8 @@
  * Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP version of this
  * code was written by him, and is used/adapted with his permission.
  *
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.3 2006/01/06 15:56:52 jan Exp $
+ *
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  * @package Text_Diff
  *
