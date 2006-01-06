@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.34 2006/01/06 15:56:06 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.35 2006/01/06 16:13:41 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -36,7 +36,7 @@
 
   <release>
     <version>0.2.0</version>
-    <date>2005-12-99</date>
+    <date>2006-01-06</date>
     <state>beta</state>
     <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
 * Fix too many trailing context lines for the last diff chunk. (PEAR Bug #6251).
