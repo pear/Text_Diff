@@ -3,7 +3,6 @@ Text_Diff: PEAR Bug #6428 (problem with single digits after space)
 --FILE--
 <?php
 include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer.php';
 include_once 'Text/Diff/Renderer/inline.php';
 
 $from = array('Line 1',  'Another line');

@@ -3,7 +3,6 @@ Text_Diff: PEAR Bug #4879 (inline renderer hangs on numbers in input string)
 --FILE--
 <?php
 include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer.php';
 include_once 'Text/Diff/Renderer/inline.php';
 
 $oldtext = <<<EOT

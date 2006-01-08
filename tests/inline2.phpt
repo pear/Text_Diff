@@ -3,7 +3,6 @@ Text_Diff: Inline renderer 2
 --FILE--
 <?php
 include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer.php';
 include_once 'Text/Diff/Renderer/inline.php';
 
 $lines1 = array(
