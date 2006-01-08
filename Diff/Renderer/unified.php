@@ -1,10 +1,13 @@
 <?php
+
+require_once 'Text/Diff/Renderer.php';
+
 /**
  * "Unified" diff renderer.
  *
  * This class renders the diff in classic "unified diff" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.4 2005/03/07 14:58:30 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.5 2006/01/08 00:06:57 jan Exp $
  *
  * @package Text_Diff
  */

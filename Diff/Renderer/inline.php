@@ -1,10 +1,13 @@
 <?php
+
+require_once 'Text/Diff/Renderer.php';
+
 /**
  * "Inline" diff renderer.
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.15 2005/08/19 12:09:08 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.16 2006/01/08 00:06:57 jan Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
