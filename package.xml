@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.15 2006/01/06 17:27:59 jan Exp $ -->
+<!-- $Horde: framework/Text_Diff/package.xml,v 1.17.10.16 2006/02/06 00:27:37 jan Exp $ -->
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0">
   <name>Text_Diff</name>
@@ -35,11 +35,10 @@
   </maintainers>
 
   <release>
-    <version>0.1.2</version>
-    <date>2005-12-16</date>
+    <version>0.2.1</version>
+    <date>2006-02-06</date>
     <state>beta</state>
-    <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
-* Fix too many trailing context lines for the last diff chunk. (PEAR Bug #6251).</notes>
+    <notes>* Fix Text_Diff::reverse() method with PHP 5 (PEAR Bug #6699).</notes>
 
     <filelist>
       <file role="php" baseinstalldir="/Text" name="Diff.php" />
@@ -86,6 +85,16 @@
   </release>
 
   <changelog>
+    <release>
+    <version>0.2.0</version>
+    <date>2006-01-06</date>
+    <state>beta</state>
+    <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
+* Fix too many trailing context lines for the last diff chunk. (PEAR Bug #6251).
+* Add diff engine for existing diffs/patches (Örjan Persson, PEAR Request #5373).
+* Fix problems with numbers, whitespace-only changes and the inline renderer (PEAR Bug #6428.</notes>
+    </release>
+
     <release>
       <version>0.1.1</version>
       <date>2005-08-19</date>
