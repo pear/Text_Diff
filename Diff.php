@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.16 2005/12/27 22:15:21 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.17 2006/02/06 00:16:09 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -74,7 +74,7 @@ class Text_Diff {
     function reverse()
     {
         if (version_compare(zend_version(), '2', '>')) {
-            $rev = clone($obj);
+            $rev = clone($this);
         } else {
             $rev = $this;
         }
@@ -202,7 +202,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.16 2005/12/27 22:15:21 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.17 2006/02/06 00:16:09 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
