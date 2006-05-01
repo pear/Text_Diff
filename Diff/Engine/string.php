@@ -21,10 +21,10 @@ class Text_Diff_Engine_string {
     /**
      * Parses a unified or context diff.
      *
-     * First param contains the whole diff and the second can be used to force 
-     * a specific diff type. If the second parameter is 'autodetect', the 
+     * First param contains the whole diff and the second can be used to force
+     * a specific diff type. If the second parameter is 'autodetect', the
      * diff will be examined to find out which type of diff this is.
-     * 
+     *
      * @param string $diff  The diff content.
      * @param string $mode  The diff mode of the content in $diff. One of
      *                      'context', 'unified', or 'autodetect'.
