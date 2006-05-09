@@ -1,169 +1,242 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- $Horde: framework/Text_Diff/package.xml,v 1.37 2006/02/06 00:18:46 jan Exp $ -->
-<!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
-<package version="1.0">
-  <name>Text_Diff</name>
-  <summary>Engine for performing and rendering text diffs</summary>
-  <description>This package provides a text-based diff engine and renderers for multiple diff output formats.</description>
-  <license>LGPL</license>
-
-  <maintainers>
-    <maintainer>
-      <user>chagenbu</user>
-      <role>lead</role>
-      <name>Chuck Hagenbuch</name>
-      <email>chuck@horde.org</email>
-    </maintainer>
-    <maintainer>
-      <user>jon</user>
-      <role>lead</role>
-      <name>Jon Parise</name>
-      <email>jon@horde.org</email>
-    </maintainer>
-    <maintainer>
-      <user>pmjones</user>
-      <role>lead</role>
-      <name>Paul M Jones</name>
-      <email>pmjones@memphis.edu</email>
-    </maintainer>
-    <maintainer>
-      <user>yunosh</user>
-      <role>lead</role>
-      <name>Jan Schneider</name>
-      <email>jan@horde.org</email>
-    </maintainer>
-  </maintainers>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Text_Diff</name>
+ <channel>pear.horde.org</channel>
+ <summary>Engine for performing and rendering text diffs</summary>
+ <description>This package provides a text-based diff engine and renderers for multiple diff output formats.
+ </description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Jon Parise</name>
+  <user>jon</user>
+  <email>jon@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Paul M Jones</name>
+  <user>pmjones</user>
+  <email>pmjones@memphis.edu</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Jan Schneider</name>
+  <user>jan</user>
+  <email>jan@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2006-05-08</date>
+ <time>23:34:33</time>
+ <version>
+  <release>0.2.2</release>
+  <api>0.2.2</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>Converted to package.xml 2.0 for pear.horde.org
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="Diff">
+    <dir name="Engine">
+     <file baseinstalldir="/Text" name="native.php" role="php" />
+     <file baseinstalldir="/Text" name="string.php" role="php" />
+     <file baseinstalldir="/Text" name="xdiff.php" role="php" />
+    </dir> <!-- /Diff/Engine -->
+    <dir name="Renderer">
+     <file baseinstalldir="/Text" name="inline.php" role="php" />
+     <file baseinstalldir="/Text" name="unified.php" role="php" />
+    </dir> <!-- /Diff/Renderer -->
+    <file baseinstalldir="/Text" name="Renderer.php" role="php" />
+   </dir> <!-- /Diff -->
+   <dir name="docs">
+    <dir name="examples">
+     <file baseinstalldir="/Text" name="1.txt" role="doc" />
+     <file baseinstalldir="/Text" name="2.txt" role="doc" />
+     <file baseinstalldir="/Text" name="diff.php" role="doc" />
+    </dir> <!-- /docs/examples -->
+   </dir> <!-- /docs -->
+   <dir name="tests">
+    <file baseinstalldir="/Text" name="1.txt" role="test" />
+    <file baseinstalldir="/Text" name="2.txt" role="test" />
+    <file baseinstalldir="/Text" name="context.patch" role="test" />
+    <file baseinstalldir="/Text" name="diff.phpt" role="test" />
+    <file baseinstalldir="/Text" name="inline.phpt" role="test" />
+    <file baseinstalldir="/Text" name="inline2.phpt" role="test" />
+    <file baseinstalldir="/Text" name="pear_bug4879.phpt" role="test" />
+    <file baseinstalldir="/Text" name="pear_bug6251.phpt" role="test" />
+    <file baseinstalldir="/Text" name="pear_bug6428.phpt" role="test" />
+    <file baseinstalldir="/Text" name="string.phpt" role="test" />
+    <file baseinstalldir="/Text" name="unified.patch" role="test" />
+    <file baseinstalldir="/Text" name="unified.phpt" role="test" />
+    <file baseinstalldir="/Text" name="unified2.phpt" role="test" />
+   </dir> <!-- /tests -->
+   <file baseinstalldir="/Text" name="Diff.php" role="php" />
+   <file baseinstalldir="/Text" name="Diff3.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+  </required>
+  <optional>
+   <extension>
+    <name>xdiff</name>
+   </extension>
+  </optional>
+ </dependencies>
+ <phprelease />
+ <changelog>
   <release>
-    <version>0.2.1</version>
-    <date>2006-02-06</date>
-    <state>beta</state>
-    <notes>* Fix Text_Diff::reverse() method with PHP 5 (PEAR Bug #6699).</notes>
-
-    <filelist>
-      <file role="php" baseinstalldir="/Text" name="Diff.php" />
-      <file role="php" baseinstalldir="/Text" name="Diff3.php" />
-      <dir role="php" baseinstalldir="/Text" name="Diff">
-        <file name="Renderer.php" />
-        <dir role="php" name="Renderer">
-          <file name="inline.php" />
-          <file name="unified.php" />
-        </dir>
-        <dir role="php" name="Engine">
-          <file name="native.php" />
-          <file name="xdiff.php" />
-          <file name="string.php" />
-        </dir>
-      </dir>
-
-      <dir role="doc" name="docs">
-        <dir name="examples">
-          <file name="diff.php"/>
-          <file name="1.txt"/>
-          <file name="2.txt"/>
-        </dir>
-      </dir>
-
-      <dir role="test" name="tests">
-        <file name="1.txt" />
-        <file name="2.txt" />
-        <file name="context.patch" />
-        <file name="diff.phpt" />
-        <file name="inline.phpt" />
-        <file name="inline2.phpt" />
-        <file name="pear_bug4879.phpt" />
-        <file name="pear_bug6251.phpt" />
-        <file name="pear_bug6428.phpt" />
-        <file name="string.phpt" />
-        <file name="unified.patch" />
-        <file name="unified.phpt" />
-        <file name="unified2.phpt" />
-      </dir>
-    </filelist>
-
-    <deps>
-      <dep type="php" rel="ge" version="4.2.0"/>
-      <dep type="ext" rel="has" optional="yes">xdiff</dep>
-    </deps>
-
-    <provides type="class" name="Text_Diff"/>
-    <provides type="class" name="Text_Diff3"/>
-    <provides type="class" name="Text_MappedDiff"/>
-    <provides type="class" name="Text_Diff_Renderer"/>
-    <provides type="class" name="Text_Diff_Renderer_inline"/>
-    <provides type="class" name="Text_Diff_Renderer_unified"/>
-    <provides type="class" name="Text_Diff_Engine_native"/>
-    <provides type="class" name="Text_Diff_Engine_string"/>
-    <provides type="class" name="Text_Diff_Engine_xdiff"/>
+   <version>
+    <release>0.2.1</release>
+    <api>0.2.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>* Fix Text_Diff::reverse() method with PHP 5 (PEAR Bug #6699).
+   </notes>
   </release>
-
-  <changelog>
-    <release>
-    <version>0.2.0</version>
-    <date>2006-01-06</date>
-    <state>beta</state>
-    <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
+  <release>
+   <version>
+    <release>0.2.0</release>
+    <api>0.2.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2006-01-06</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
 * Fix too many trailing context lines for the last diff chunk. (PEAR Bug #6251).
-* Add diff engine for existing diffs/patches (�rjan Persson, PEAR Request #5373).
-* Fix problems with numbers, whitespace-only changes and the inline renderer (PEAR Bug #6428.</notes>
-    </release>
-
-    <release>
-      <version>0.1.1</version>
-      <date>2005-08-19</date>
-      <state>beta</state>
-      <notes>* Restore compatibility with PHP 4.2.0 (PEAR Bug #5152).</notes>
-    </release>
-
-    <release>
-      <version>0.1.0</version>
-      <date>2005-08-16</date>
-      <state>beta</state>
-      <notes>* Fix Renderer::getParams() (PEAR Bug #4549)
+* Add diff engine for existing diffs/patches (Ãrjan Persson, PEAR Request #5373).
+* Fix problems with numbers, whitespace-only changes and the inline renderer (PEAR Bug #6428.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-08-19</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>* Restore compatibility with PHP 4.2.0 (PEAR Bug #5152).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-08-16</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>* Fix Renderer::getParams() (PEAR Bug #4549)
 * Encode HTML entities in the inline renderer (Horde Bug #2181)
-* Fix endless loop in inline renderer with certain whitespaces (PEAR Bug #4879)</notes>
-    </release>
-
-    <release>
-      <version>0.0.5</version>
-      <date>2005-05-04</date>
-      <state>beta</state>
-      <notes>* Fixed variable name in Text_MappedDiff.
+* Fix endless loop in inline renderer with certain whitespaces (PEAR Bug #4879)
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.0.5</release>
+    <api>0.0.5</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-05-04</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>* Fixed variable name in Text_MappedDiff.
 * Removed output buffering code.
 * Fixed additional empty lines being added with the inline renderer (Bug 3730).
-* Fixed multiple calls to _endBlock per block (Bug 4065).</notes>
-    </release>
-
-    <release>
-      <version>0.0.4</version>
-      <date>2004-10-13</date>
-      <state>beta</state>
-      <notes>* Generalized Diff Renderer parameter handling.
+* Fixed multiple calls to _endBlock per block (Bug 4065).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.0.4</release>
+    <api>0.0.4</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2004-10-13</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>* Generalized Diff Renderer parameter handling.
 * Added an inline renderer contributed by Ciprian Popovici (ciprian@zuavra.net).
 * Fixed PHPDoc.
-* Fixed a PHP 5 incompatibility.</notes>
-    </release>
-
-    <release>
-      <version>0.0.3</version>
-      <date>2004-05-13</date>
-      <state>alpha</state>
-      <notes>Renamed final() and orig() methods to avoid conflict with final keyword in PHP5</notes>
-    </release>
-
-    <release>
-      <version>0.0.2</version>
-      <date>2004-03-16</date>
-      <state>alpha</state>
-      <notes>Added optional xdiff support</notes>
-    </release>
-
-    <release>
-      <version>0.0.1</version>
-      <date>2004-01-09</date>
-      <state>alpha</state>
-      <notes>Initial package release</notes>
-    </release>
-  </changelog>
-
+* Fixed a PHP 5 incompatibility.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.0.3</release>
+    <api>0.0.3</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2004-05-13</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Renamed final() and orig() methods to avoid conflict with final keyword in PHP5
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.0.2</release>
+    <api>0.0.2</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2004-03-16</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Added optional xdiff support
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2004-01-09</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Initial package release
+   </notes>
+  </release>
+ </changelog>
 </package>
