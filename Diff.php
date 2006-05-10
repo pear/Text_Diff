@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.17 2006/02/06 00:16:09 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.18 2006/05/10 18:38:44 eraserhd Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -25,9 +25,11 @@ class Text_Diff {
     /**
      * Computes diffs between sequences of strings.
      *
-     * @param array $from_lines  An array of strings.  Typically these are
-     *                           lines from a file.
-     * @param array $to_lines    An array of strings.
+     * @param string $engine     Name of the diffing engine to use.  'auto'
+     *                           will automatically select the best.
+     * @param array $params      Parameters to pass to the diffing engine.
+     *                           Normally an array of two arrays, each
+     *                           containing the lines from a file.
      */
     function Text_Diff($engine, $params)
     {
@@ -202,7 +204,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.17 2006/02/06 00:16:09 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.18 2006/05/10 18:38:44 eraserhd Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
