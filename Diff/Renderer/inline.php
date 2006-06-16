@@ -7,7 +7,7 @@ require_once 'Text/Diff/Renderer.php';
  *
  * This class renders diffs in the Wiki-style "inline" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.16 2006/01/08 00:06:57 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.17 2006/06/16 14:06:43 chuck Exp $
  *
  * @author  Ciprian Popovici
  * @package Text_Diff
@@ -132,6 +132,9 @@ class Text_Diff_Renderer_inline extends Text_Diff_Renderer {
 
     function _splitOnWords($string, $newlineEscape = "\n")
     {
+        // Ignore \0; otherwise the while loop will never finish.
+        $string = str_replace("\0", '', $string);
+
         $words = array();
         $length = strlen($string);
         $pos = 0;
