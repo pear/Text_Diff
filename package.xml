@@ -43,8 +43,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <api>beta</api>
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
- <notes>Converted to package.xml 2.0 for pear.horde.org
- </notes>
+ <notes>* Converted to package.xml 2.0 for pear.horde.org.
+* Strip nul characters to avoid infinite loops (PEAR bug #7921).</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
