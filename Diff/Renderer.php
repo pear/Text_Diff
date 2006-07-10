@@ -5,7 +5,7 @@
  * This class renders the diff in classic diff format. It is intended that
  * this class be customized via inheritance, to obtain fancier outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.12 2005/12/16 11:07:33 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.13 2006/07/10 14:17:07 jan Exp $
  *
  * @package Text_Diff
  */
@@ -190,17 +190,17 @@ class Text_Diff_Renderer {
 
     function _context($lines)
     {
-        return $this->_lines($lines);
+        return $this->_lines($lines, '  ');
     }
 
     function _added($lines)
     {
-        return $this->_lines($lines, '>');
+        return $this->_lines($lines, '> ');
     }
 
     function _deleted($lines)
     {
-        return $this->_lines($lines, '<');
+        return $this->_lines($lines, '< ');
     }
 
     function _changed($orig, $final)
