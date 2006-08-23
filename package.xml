@@ -15,12 +15,6 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <active>yes</active>
  </lead>
  <lead>
-  <name>Jon Parise</name>
-  <user>jon</user>
-  <email>jon@horde.org</email>
-  <active>yes</active>
- </lead>
- <lead>
   <name>Paul M Jones</name>
   <user>pmjones</user>
   <email>pmjones@memphis.edu</email>
