@@ -7,7 +7,7 @@ require_once 'Text/Diff/Renderer.php';
  *
  * This class renders the diff in classic "unified diff" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.5 2006/01/08 00:06:57 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.6 2007/01/05 14:55:56 jan Exp $
  *
  * @package Text_Diff
  */
@@ -32,6 +32,11 @@ class Text_Diff_Renderer_unified extends Text_Diff_Renderer {
             $ybeg .= ',' . $ylen;
         }
         return "@@ -$xbeg +$ybeg @@";
+    }
+
+    function _context($lines)
+    {
+        return $this->_lines($lines, ' ');
     }
 
     function _added($lines)
