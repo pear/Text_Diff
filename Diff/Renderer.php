@@ -5,7 +5,7 @@
  * This class renders the diff in classic diff format. It is intended that
  * this class be customized via inheritance, to obtain fancier outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.13 2006/07/10 14:17:07 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.14 2007/01/05 13:17:32 jan Exp $
  *
  * @package Text_Diff
  */
@@ -77,25 +77,39 @@ class Text_Diff_Renderer {
 
         $diffs = $diff->getDiff();
         foreach ($diffs as $i => $edit) {
+            /* If these are unchanged (copied) lines, and we want to keep
+             * leading or trailing context lines, extract them from the copy
+             * block. */
             if (is_a($edit, 'Text_Diff_Op_copy')) {
+                /* Do we have any diff blocks yet? */
                 if (is_array($block)) {
+                    /* How many lines to keep as context from the copy
+                     * block. */
                     $keep = $i == count($diffs) - 1 ? $ntrail : $nlead + $ntrail;
                     if (count($edit->orig) <= $keep) {
+                        /* We have less lines in the block than we want for
+                         * context => keep the whole block. */
                         $block[] = $edit;
                     } else {
                         if ($ntrail) {
+                            /* Create a new block with that many lines as we
+                             * need for the trailing context. */
                             $context = array_slice($edit->orig, 0, $ntrail);
                             $block[] = &new Text_Diff_Op_copy($context);
                         }
+                        /* @todo */
                         $output .= $this->_block($x0, $ntrail + $xi - $x0,
                                                  $y0, $ntrail + $yi - $y0,
                                                  $block);
                         $block = false;
                     }
                 }
+                /* Keep the copy block as the context for the next block. */
                 $context = $edit->orig;
             } else {
+                /* Don't we have any diff blocks yet? */
                 if (!is_array($block)) {
+                    /* Extract context lines from the preceding copy block. */
                     $context = array_slice($context, count($context) - $nlead);
                     $x0 = $xi - count($context);
                     $y0 = $yi - count($context);
