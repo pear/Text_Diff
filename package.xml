@@ -38,7 +38,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
  <notes>* Converted to package.xml 2.0 for pear.horde.org.
-* Strip nul characters to avoid infinite loops (PEAR bug #7921).</notes>
+* Stripped nul characters to avoid infinite loops (PEAR bug #7921).
+* Added context diff renderer.</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
@@ -48,6 +49,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
      <file baseinstalldir="/Text" name="xdiff.php" role="php" />
     </dir> <!-- /Diff/Engine -->
     <dir name="Renderer">
+     <file baseinstalldir="/Text" name="context.php" role="php" />
      <file baseinstalldir="/Text" name="inline.php" role="php" />
      <file baseinstalldir="/Text" name="unified.php" role="php" />
     </dir> <!-- /Diff/Renderer -->
@@ -63,7 +65,13 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <dir name="tests">
     <file baseinstalldir="/Text" name="1.txt" role="test" />
     <file baseinstalldir="/Text" name="2.txt" role="test" />
+    <file baseinstalldir="/Text" name="3.txt" role="test" />
+    <file baseinstalldir="/Text" name="4.txt" role="test" />
+    <file baseinstalldir="/Text" name="5.txt" role="test" />
+    <file baseinstalldir="/Text" name="6.txt" role="test" />
     <file baseinstalldir="/Text" name="context.patch" role="test" />
+    <file baseinstalldir="/Text" name="context.phpt" role="test" />
+    <file baseinstalldir="/Text" name="context2.phpt" role="test" />
     <file baseinstalldir="/Text" name="diff.phpt" role="test" />
     <file baseinstalldir="/Text" name="inline.phpt" role="test" />
     <file baseinstalldir="/Text" name="inline2.phpt" role="test" />
