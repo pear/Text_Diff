@@ -1,5 +1,5 @@
 --TEST--
-Text_Diff: Inline renderer 2
+Text_Diff: Unified renderer 2
 --FILE--
 <?php
 include_once 'Text/Diff.php';
