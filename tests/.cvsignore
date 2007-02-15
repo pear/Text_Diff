@@ -1,4 +1,4 @@
 *.diff
-*.exp
 *.log
+*.exp
 *.out
