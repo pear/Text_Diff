@@ -5,7 +5,7 @@
  * This class renders the diff in classic diff format. It is intended that
  * this class be customized via inheritance, to obtain fancier outputs.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.14 2007/01/05 13:17:32 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.15 2007/02/18 01:38:32 selsky Exp $
  *
  * @package Text_Diff
  */
@@ -92,8 +92,8 @@ class Text_Diff_Renderer {
                         $block[] = $edit;
                     } else {
                         if ($ntrail) {
-                            /* Create a new block with that many lines as we
-                             * need for the trailing context. */
+                            /* Create a new block with as many lines as we need
+                             * for the trailing context. */
                             $context = array_slice($edit->orig, 0, $ntrail);
                             $block[] = &new Text_Diff_Op_copy($context);
                         }
