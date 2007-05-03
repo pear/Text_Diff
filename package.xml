@@ -4,20 +4,13 @@ http://pear.php.net/dtd/tasks-1.0.xsd
 http://pear.php.net/dtd/package-2.0
 http://pear.php.net/dtd/package-2.0.xsd">
  <name>Text_Diff</name>
- <channel>pear.horde.org</channel>
+ <channel>pear.php.net</channel>
  <summary>Engine for performing and rendering text diffs</summary>
- <description>This package provides a text-based diff engine and renderers for multiple diff output formats.
- </description>
+ <description>This package provides a text-based diff engine and renderers for multiple diff output formats.</description>
  <lead>
   <name>Chuck Hagenbuch</name>
   <user>chagenbu</user>
   <email>chuck@horde.org</email>
-  <active>yes</active>
- </lead>
- <lead>
-  <name>Paul M Jones</name>
-  <user>pmjones</user>
-  <email>pmjones@memphis.edu</email>
   <active>yes</active>
  </lead>
  <lead>
@@ -26,20 +19,27 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
+ <lead>
+  <name>Paul M Jones</name>
+  <user>pmjones</user>
+  <email>pmjones@memphis.edu</email>
+  <active>no</active>
+ </lead>
  <date>2006-05-08</date>
  <time>23:34:33</time>
  <version>
-  <release>0.2.2</release>
-  <api>0.2.2</api>
+  <release>0.3.0</release>
+  <api>0.3.0</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
- <notes>* Converted to package.xml 2.0 for pear.horde.org.
+ <notes>* Converted to package.xml 2.0.
+* Added context diff renderer.
 * Stripped nul characters to avoid infinite loops (PEAR bug #7921).
-* Added context diff renderer.</notes>
+* Fix assertion with PHP 5 (PEAR bug #10423).</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
