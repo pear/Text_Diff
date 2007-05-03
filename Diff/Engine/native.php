@@ -18,7 +18,7 @@
  * Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP version of this
  * code was written by him, and is used/adapted with his permission.
  *
- * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.3 2006/01/06 15:56:52 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.4 2007/05/03 14:39:01 jan Exp $
  *
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  * @package Text_Diff
@@ -199,7 +199,7 @@ class Text_Diff_Engine_native {
 
                 while (list($junk, $y) = each($matches)) {
                     if ($y > $this->seq[$k - 1]) {
-                        assert($y < $this->seq[$k]);
+                        assert($y <= $this->seq[$k]);
                         /* Optimization: this is a common case: next match is
                          * just replacing previous match. */
                         $this->in_seq[$this->seq[$k]] = false;
