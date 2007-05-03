@@ -25,8 +25,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>pmjones@memphis.edu</email>
   <active>no</active>
  </lead>
- <date>2006-05-08</date>
- <time>23:34:33</time>
+ <date>2007-05-03</date>
  <version>
   <release>0.3.0</release>
   <api>0.3.0</api>
@@ -113,6 +112,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <release>beta</release>
     <api>beta</api>
    </stability>
+   <date>2006-02-06</date>
    <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
    <notes>* Fix Text_Diff::reverse() method with PHP 5 (PEAR Bug #6699).
    </notes>
