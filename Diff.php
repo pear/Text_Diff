@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.18 2006/05/10 18:38:44 eraserhd Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.19 2007/06/11 14:38:39 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -204,7 +204,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.18 2006/05/10 18:38:44 eraserhd Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.19 2007/06/11 14:38:39 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -264,7 +264,7 @@ class Text_Diff_Op {
     var $orig;
     var $final;
 
-    function reverse()
+    function &reverse()
     {
         trigger_error('Abstract method', E_USER_ERROR);
     }
