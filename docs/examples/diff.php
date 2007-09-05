@@ -32,7 +32,7 @@ $lines1 = file($argv[1]);
 $lines2 = file($argv[2]);
 
 /* Create the Diff object. */
-$diff = &new Text_Diff($lines1, $lines2);
+$diff = new Text_Diff('auto', array($lines1, $lines2));
 
 /* Output the diff in unified format. */
 $renderer = &new Text_Diff_Renderer_unified();
