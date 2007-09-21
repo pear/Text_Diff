@@ -38,12 +38,14 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <notes>* Converted to package.xml 2.0.
 * Added context diff renderer.
 * Stripped nul characters to avoid infinite loops (PEAR bug #7921).
-* Fix assertion with PHP 5 (PEAR bug #10423).</notes>
+* Fix assertion with PHP 5 (PEAR bug #10423).
+* Add shell diff engine (PEAR bug #12051).</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
     <dir name="Engine">
      <file baseinstalldir="/Text" name="native.php" role="php" />
+     <file baseinstalldir="/Text" name="shell.php" role="php" />
      <file baseinstalldir="/Text" name="string.php" role="php" />
      <file baseinstalldir="/Text" name="xdiff.php" role="php" />
     </dir> <!-- /Diff/Engine -->

@@ -8,7 +8,7 @@
  * The PHP diff code used in this package was originally written by Geoffrey
  * T. Dairiki and is used with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.19 2007/06/11 14:38:39 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.20 2007/09/21 01:17:59 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -41,8 +41,9 @@ class Text_Diff {
 
         if ($engine == 'auto') {
             $engine = extension_loaded('xdiff') ? 'xdiff' : 'native';
+        } else {
+            $engine = basename($engine);
         }
-        $engine = basename($engine);
 
         require_once 'Text/Diff/Engine/' . $engine . '.php';
         $class = 'Text_Diff_Engine_' . $engine;
@@ -169,6 +170,43 @@ class Text_Diff {
     }
 
     /**
+     * Determines the location of the system temporary directory.
+     *
+     * @static
+     *
+     * @access protected
+     *
+     * @return string  A directory name which can be used for temp files.
+     *                 Returns false if one could not be found.
+     */
+    function _getTempDir()
+    {
+        $tmp_locations = array('/tmp', '/var/tmp', 'c:\WUTemp', 'c:\temp',
+                               'c:\windows\temp', 'c:\winnt\temp');
+
+        /* Try PHP's upload_tmp_dir directive. */
+        $tmp = ini_get('upload_tmp_dir');
+
+        /* Otherwise, try to determine the TMPDIR environment variable. */
+        if (!strlen($tmp)) {
+            $tmp = getenv('TMPDIR');
+        }
+
+        /* If we still cannot determine a value, then cycle through a list of
+         * preset possibilities. */
+        while (!strlen($tmp) && count($tmp_locations)) {
+            $tmp_check = array_shift($tmp_locations);
+            if (@is_dir($tmp_check)) {
+                $tmp = $tmp_check;
+            }
+        }
+
+        /* If it is still empty, we have failed, so return false; otherwise
+         * return the directory determined. */
+        return strlen($tmp) ? $tmp : false;
+    }
+
+    /**
      * Checks a diff for validity.
      *
      * This is here only for debugging purposes.
@@ -204,7 +242,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.19 2007/06/11 14:38:39 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.20 2007/09/21 01:17:59 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
