@@ -54,7 +54,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
      <file baseinstalldir="/Text" name="inline.php" role="php" />
      <file baseinstalldir="/Text" name="unified.php" role="php" />
     </dir> <!-- /Diff/Renderer -->
+    <file baseinstalldir="/Text" name="Mapped.php" role="php" />
     <file baseinstalldir="/Text" name="Renderer.php" role="php" />
+    <file baseinstalldir="/Text" name="ThreeWay.php" role="php" />
    </dir> <!-- /Diff -->
    <dir name="docs">
     <dir name="examples">
