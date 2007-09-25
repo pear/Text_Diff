@@ -9,16 +9,16 @@ $oldtext = <<<EOT
 This line is different in 1.txt
 EOT;
 
-$newtext = <<< EOT
+$newtext = <<<EOT
 This is new !!
 This line is different in 2.txt
 EOT;
 
-$oldpieces = explode ("\n", $oldtext);
-$newpieces = explode ("\n", $newtext);
-$diff = &new Text_Diff ($oldpieces, $newpieces);
+$oldpieces = explode("\n", $oldtext);
+$newpieces = explode("\n", $newtext);
+$diff = new Text_Diff ($oldpieces, $newpieces);
 
-$renderer = &new Text_Diff_Renderer_inline();
+$renderer = new Text_Diff_Renderer_inline();
 echo $renderer->render($diff);
 ?>
 --EXPECT--
