@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.2 2007/09/21 20:35:17 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.3 2007/09/25 21:59:29 chuck Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This
  * class uses the Unix `diff` program via shell_exec to compute the
@@ -70,31 +70,33 @@ class Text_Diff_Engine_shell {
                 // This paren is not set every time (see regex).
                 $match[5] = false;
             }
+
             if ($match[3] == 'a') {
-                // We need this for copied lines.
-                $match[1]++;
+                $from_line_no--;
             }
-            if ($from_line_no < $match[1]) {
+
+            if ($match[3] == 'd') {
+                $to_line_no--;
+            }
+
+            if ($from_line_no < $match[1] || $to_line_no < $match[4]) {
                 // copied lines
-                assert('$match[1] - $from_line_no - (($match[3] == "d") ? 1 : 0) == $match[4] - $to_line_no');
+                assert('$match[1] - $from_line_no == $match[4] - $to_line_no');
                 array_push($edits,
                     new Text_Diff_Op_copy(
                         $this->_getLines($from_lines, $from_line_no, $match[1] - 1),
                         $this->_getLines($to_lines, $to_line_no, $match[4] - 1)));
             }
-            if ($match[3] == 'd') {
+
+            switch ($match[3]) {
+            case 'd':
                 // deleted lines
                 array_push($edits,
                     new Text_Diff_Op_delete(
                         $this->_getLines($from_lines, $from_line_no, $match[2])));
-                // voodoo for copied lines
-                if (!$match[2]) {
-                    $from_line_no--;
-                }
-                continue;
-            }
+                $to_line_no++;
+                break;
 
-            switch ($match[3]) {
             case 'c':
                 // changed lines
                 array_push($edits,
@@ -108,12 +110,13 @@ class Text_Diff_Engine_shell {
                 array_push($edits,
                     new Text_Diff_Op_add(
                         $this->_getLines($to_lines, $to_line_no, $match[5])));
+                $from_line_no++;
                 break;
             }
         }
 
         if (!empty($from_lines)) {
-            // Some lines might still be pending.  Add them as copied
+            // Some lines might still be pending. Add them as copied
             array_push($edits,
                 new Text_Diff_Op_copy(
                     $this->_getLines($from_lines, $from_line_no,
@@ -135,19 +138,20 @@ class Text_Diff_Engine_shell {
      * @param int   $end         Optional end line, when we want to chop more
      *                           than one line.
      *
-     * @return array  The chopped lines
+     * @return array The chopped lines
      */
     function _getLines(&$text_lines, &$line_no, $end = false)
     {
-        // At least one line must be shifted
-        $lines = array(array_shift($text_lines));
-        $line_no++;
         if (!empty($end)) {
+            $lines = array();
             // We can shift even more
             while ($line_no <= $end) {
                 array_push($lines, array_shift($text_lines));
                 $line_no++;
             }
+        } else {
+            $lines = array(array_shift($text_lines));
+            $line_no++;
         }
 
         return $lines;
