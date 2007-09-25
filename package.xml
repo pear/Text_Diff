@@ -118,7 +118,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 * Added context diff renderer.
 * Stripped nul characters to avoid infinite loops (PEAR bug #7921).
 * Fix assertion with PHP 5 (PEAR bug #10423).
-* Add shell diff engine (PEAR bug #12051).</notes>
+* Add shell diff engine (Milian Wolff, PEAR bug #12051).</notes>
   </release>
   <release>
    <version>
