@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.5 2007/09/21 22:33:14 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.6 2007/09/25 21:59:46 chuck Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This class is
  * implemented using native PHP code.
@@ -27,7 +27,6 @@
  *
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  * @package Text_Diff
- * @access  private
  */
 class Text_Diff_Engine_native {
 

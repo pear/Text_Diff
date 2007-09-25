@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/xdiff.php,v 1.2 2007/09/21 20:35:17 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/xdiff.php,v 1.3 2007/09/25 21:59:46 chuck Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This class
  * uses the xdiff PECL package (http://pecl.php.net/package/xdiff) to compute
@@ -13,7 +13,6 @@
  *
  * @author  Jon Parise <jon@horde.org>
  * @package Text_Diff
- * @access  private
  */
 class Text_Diff_Engine_xdiff {
 

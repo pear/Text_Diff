@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.3 2007/09/21 22:33:14 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.4 2007/09/25 21:59:46 chuck Exp $
  *
  * Parses unified or context diffs output from eg. the diff utility.
  *
@@ -21,7 +21,6 @@
  * @author  Örjan Persson <o@42mm.org>
  * @package Text_Diff
  * @since   0.2.0
- * @access  private
  */
 class Text_Diff_Engine_string {
 
