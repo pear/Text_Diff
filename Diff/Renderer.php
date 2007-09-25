@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.16 2007/09/21 22:33:14 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.17 2007/09/25 16:31:08 jan Exp $
  *
  * A class to render Diffs in different formats.
  *
@@ -187,6 +187,11 @@ class Text_Diff_Renderer {
         }
         if ($ylen > 1) {
             $ybeg .= ',' . ($ybeg + $ylen - 1);
+        }
+
+        if ($xlen && !$ylen) {
+            // this matches the GNU Diff behaviour
+            $ybeg--;
         }
 
         return $xbeg . ($xlen ? ($ylen ? 'c' : 'd') : 'a') . $ybeg;
