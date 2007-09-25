@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.3 2007/09/25 21:59:29 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.4 2007/09/25 21:59:46 chuck Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This
  * class uses the Unix `diff` program via shell_exec to compute the
@@ -14,7 +14,6 @@
  * @author  Milian Wolff <mail@milianw.de>
  * @package Text_Diff
  * @since   0.3.0
- * @access  private
  */
 class Text_Diff_Engine_shell {
 
