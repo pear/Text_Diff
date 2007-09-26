@@ -35,7 +35,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <api>beta</api>
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
- <notes>* Fixed off-by-one errors with line numbers in default renderer output (Milian Wolff, PEAR Bugs #7839, #12111).</notes>
+ <notes>* Fixed off-by-one errors with line numbers in default renderer output (Milian Wolff, PEAR Bugs #7839, #12111).
+* Restore compatibility with PHP 4 in the shell diff engine.</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
