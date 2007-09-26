@@ -35,9 +35,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <api>beta</api>
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
- <notes>* Fixed line numbers in default renderer output (Milian Wolff, PEAR Bugs #7839, #12111).
-* Fix off-by-one error with added lines in default renderer output (Milian Wolff, PEAR Bug #7839).
-</notes>
+ <notes>* Fixed off-by-one errors with line numbers in default renderer output (Milian Wolff, PEAR Bugs #7839, #12111).</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
@@ -149,7 +147,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
    <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
 * Fix too many trailing context lines for the last diff chunk. (PEAR Bug #6251).
-* Add diff engine for existing diffs/patches (Ãrjan Persson, PEAR Request #5373).
+* Add diff engine for existing diffs/patches (Örjan Persson, PEAR Request #5373).
 * Fix problems with numbers, whitespace-only changes and the inline renderer (PEAR Bug #6428.
    </notes>
   </release>
