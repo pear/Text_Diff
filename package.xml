@@ -116,9 +116,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
    <notes>* Converted to package.xml 2.0.
 * Added context diff renderer.
-* Stripped nul characters to avoid infinite loops (PEAR bug #7921).
-* Fix assertion with PHP 5 (PEAR bug #10423).
-* Add shell diff engine (Milian Wolff, PEAR bug #12051).</notes>
+* Stripped nul characters to avoid infinite loops (PEAR Bug #7921).
+* Fix assertion with PHP 5 (PEAR Bug #10423).
+* Add shell diff engine (Milian Wolff, PEAR Request #12051).</notes>
   </release>
   <release>
    <version>
