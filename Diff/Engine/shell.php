@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.4 2007/09/25 21:59:46 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.5 2007/09/26 16:09:54 jan Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This
  * class uses the Unix `diff` program via shell_exec to compute the
@@ -42,8 +42,12 @@ class Text_Diff_Engine_shell {
         // Execute gnu diff or similar to get a standard diff file.
         $from_file = tempnam($temp_dir, 'Text_Diff');
         $to_file = tempnam($temp_dir, 'Text_Diff');
-        file_put_contents($from_file, implode("\n", $from_lines));
-        file_put_contents($to_file, implode("\n", $to_lines));
+        $fp = fopen($from_file, 'w');
+        fwrite($fp, implode("\n", $from_lines));
+        fclose($fp);
+        $fp = fopen($to_file, 'w');
+        fwrite($fp, implode("\n", $to_lines));
+        fclose($fp);
         $diff = shell_exec($this->_diffCommand . ' ' . $from_file . ' ' . $to_file);
         unlink($from_file);
         unlink($to_file);
