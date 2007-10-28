@@ -1,6 +1,11 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Mapped.php,v 1.1 2007/09/21 20:35:17 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Mapped.php,v 1.2 2007/10/28 04:58:35 chuck Exp $
+ *
+ * Copyright 2007 The Horde Project (http://www.horde.org/)
+ *
+ * See the enclosed file COPYING for license information (LGPL). If you
+ * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>

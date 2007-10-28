@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/ThreeWay.php,v 1.1 2007/09/21 20:35:17 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/ThreeWay.php,v 1.2 2007/10/28 04:58:35 chuck Exp $
  *
  * A class for computing three way diffs.
  *
@@ -79,7 +79,7 @@ class Text_Diff_ThreeWay extends Text_Diff {
     function _diff3($edits1, $edits2)
     {
         $edits = array();
-        $bb = new Text_Diff3_BlockBuilder();
+        $bb = new Text_Diff_ThreeWay_BlockBuilder();
 
         $e1 = current($edits1);
         $e2 = current($edits2);
@@ -94,7 +94,7 @@ class Text_Diff_ThreeWay extends Text_Diff {
 
                 $ncopy = min($e1->norig(), $e2->norig());
                 assert($ncopy > 0);
-                $edits[] = &new Text_Diff3_Op_copy(array_slice($e1->orig, 0, $ncopy));
+                $edits[] = new Text_Diff_ThreeWay_Op_copy(array_slice($e1->orig, 0, $ncopy));
 
                 if ($e1->norig() > $ncopy) {
                     array_splice($e1->orig, 0, $ncopy);
@@ -153,9 +153,9 @@ class Text_Diff_ThreeWay extends Text_Diff {
  *
  * @access private
  */
-class Text_Diff3_Op {
+class Text_Diff_ThreeWay_Op {
 
-    function Text_Diff3_Op($orig = false, $final1 = false, $final2 = false)
+    function Text_Diff_ThreeWay_Op($orig = false, $final1 = false, $final2 = false)
     {
         $this->orig = $orig ? $orig : array();
         $this->final1 = $final1 ? $final1 : array();
@@ -192,9 +192,9 @@ class Text_Diff3_Op {
  *
  * @access private
  */
-class Text_Diff3_Op_copy extends Text_Diff3_Op {
+class Text_Diff_ThreeWay_Op_copy extends Text_Diff_ThreeWay_Op {
 
-    function Text_Diff3_Op_Copy($lines = false)
+    function Text_Diff_ThreeWay_Op_Copy($lines = false)
     {
         $this->orig = $lines ? $lines : array();
         $this->final1 = &$this->orig;
@@ -219,9 +219,9 @@ class Text_Diff3_Op_copy extends Text_Diff3_Op {
  *
  * @access private
  */
-class Text_Diff3_BlockBuilder {
+class Text_Diff_ThreeWay_BlockBuilder {
 
-    function Text_Diff3_BlockBuilder()
+    function Text_Diff_ThreeWay_BlockBuilder()
     {
         $this->_init();
     }
@@ -257,7 +257,7 @@ class Text_Diff3_BlockBuilder {
         if ($this->isEmpty()) {
             return false;
         } else {
-            $edit = &new Text_Diff3_Op($this->orig, $this->final1, $this->final2);
+            $edit = new Text_Diff_ThreeWay_Op($this->orig, $this->final1, $this->final2);
             $this->_init();
             return $edit;
         }

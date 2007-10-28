@@ -1,11 +1,23 @@
 <?php
+/**
+ * $Horde: framework/Text_Diff/Diff3.php,v 1.5 2007/10/28 04:58:35 chuck Exp $
+ *
+ * A class for computing three way diffs.
+ *
+ * Copyright 2007 The Horde Project (http://www.horde.org/)
+ *
+ * See the enclosed file COPYING for license information (LGPL). If you
+ * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
+ *
+ * @package Text_Diff
+ * @since   0.3.0
+ */
 
+/** Text_Diff */
 require_once 'Text/Diff.php';
 
 /**
  * A class for computing three way diffs.
- *
- * $Horde: framework/Text_Diff/Diff3.php,v 1.4 2005/07/03 05:10:11 selsky Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
@@ -29,15 +41,17 @@ class Text_Diff3 extends Text_Diff {
     function Text_Diff3($orig, $final1, $final2)
     {
         if (extension_loaded('xdiff')) {
-            $engine = &new Text_Diff_Engine_xdiff();
+            $engine = new Text_Diff_Engine_xdiff();
         } else {
-            $engine = &new Text_Diff_Engine_native();
+            $engine = new Text_Diff_Engine_native();
         }
 
         $this->_edits = $this->_diff3($engine->diff($orig, $final1),
                                       $engine->diff($orig, $final2));
     }
 
+    /**
+     */
     function mergedOutput($label1 = false, $label2 = false)
     {
         $lines = array();
@@ -65,7 +79,7 @@ class Text_Diff3 extends Text_Diff {
     function _diff3($edits1, $edits2)
     {
         $edits = array();
-        $bb = &new Text_Diff3_BlockBuilder();
+        $bb = new Text_Diff3_BlockBuilder();
 
         $e1 = current($edits1);
         $e2 = current($edits2);
@@ -80,7 +94,7 @@ class Text_Diff3 extends Text_Diff {
 
                 $ncopy = min($e1->norig(), $e2->norig());
                 assert($ncopy > 0);
-                $edits[] = &new Text_Diff3_Op_copy(array_slice($e1->orig, 0, $ncopy));
+                $edits[] = new Text_Diff3_Op_copy(array_slice($e1->orig, 0, $ncopy));
 
                 if ($e1->norig() > $ncopy) {
                     array_splice($e1->orig, 0, $ncopy);
@@ -243,7 +257,7 @@ class Text_Diff3_BlockBuilder {
         if ($this->isEmpty()) {
             return false;
         } else {
-            $edit = &new Text_Diff3_Op($this->orig, $this->final1, $this->final2);
+            $edit = new Text_Diff3_Op($this->orig, $this->final1, $this->final2);
             $this->_init();
             return $edit;
         }

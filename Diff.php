@@ -1,15 +1,17 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.22 2007/09/21 22:33:14 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.23 2007/10/28 04:58:35 chuck Exp $
  *
  * Text_Diff
  *
  * General API for generating and formatting diffs - the differences between
  * two sequences of strings.
  *
- * The original PHP version of this code was written by him, and is
- * used/adapted with his permission.
+ * The original PHP version of this code was written by Geoffrey
+ * T. Dairiki <dairiki@dairiki.org>, and is used/adapted with his
+ * permission.
  *
+ * Copyright 2004 Geoffrey T. Dairiki <dairiki@dairiki.org>
  * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
@@ -247,7 +249,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.22 2007/09/21 22:33:14 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.23 2007/10/28 04:58:35 chuck Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>

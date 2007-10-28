@@ -1,14 +1,24 @@
 <?php
-
-require_once 'Text/Diff/Renderer.php';
-
 /**
+ * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.7 2007/10/28 04:58:36 chuck Exp $
+ *
  * "Unified" diff renderer.
  *
  * This class renders the diff in classic "unified diff" format.
  *
- * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.6 2007/01/05 14:55:56 jan Exp $
+ * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
  *
+ * See the enclosed file COPYING for license information (LGPL). If you
+ * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
+ *
+ * @author  Ciprian Popovici
+ * @package Text_Diff
+ */
+
+/** Text_Diff_Renderer */
+require_once 'Text/Diff/Renderer.php';
+
+/**
  * @package Text_Diff
  */
 class Text_Diff_Renderer_unified extends Text_Diff_Renderer {
