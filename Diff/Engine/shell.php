@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.5 2007/09/26 16:09:54 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.6 2007/12/03 00:04:40 chuck Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This
  * class uses the Unix `diff` program via shell_exec to compute the
@@ -9,7 +9,7 @@
  * Copyright 2007 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
+ * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
  * @author  Milian Wolff <mail@milianw.de>
  * @package Text_Diff

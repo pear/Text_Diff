@@ -1,13 +1,13 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.18 2007/09/21 22:33:14 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/inline.php,v 1.19 2007/12/03 00:04:40 chuck Exp $
  *
  * "Inline" diff renderer.
  *
  * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
+ * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
  * @author  Ciprian Popovici
  * @package Text_Diff

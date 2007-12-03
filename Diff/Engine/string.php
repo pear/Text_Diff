@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.4 2007/09/25 21:59:46 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.5 2007/12/03 00:04:40 chuck Exp $
  *
  * Parses unified or context diffs output from eg. the diff utility.
  *
@@ -16,7 +16,7 @@
  * Copyright 2005-2007 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
+ * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
  * @author  Örjan Persson <o@42mm.org>
  * @package Text_Diff

@@ -34,7 +34,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <release>beta</release>
   <api>beta</api>
  </stability>
- <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
  <notes>* Fixed off-by-one errors with line numbers in default renderer output (Milian Wolff, PEAR Bugs #7839, #12111).
 * Restore compatibility with PHP 4 in the shell diff engine.</notes>
  <contents>
@@ -114,7 +114,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Converted to package.xml 2.0.
 * Added context diff renderer.
 * Stripped nul characters to avoid infinite loops (PEAR Bug #7921).
@@ -131,7 +131,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>beta</api>
    </stability>
    <date>2006-02-06</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Fix Text_Diff::reverse() method with PHP 5 (PEAR Bug #6699).
    </notes>
   </release>
@@ -145,7 +145,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>beta</api>
    </stability>
    <date>2006-01-06</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Fix reference warnings with PHP 4.4 and PHP 5.1.
 * Fix too many trailing context lines for the last diff chunk. (PEAR Bug #6251).
 * Add diff engine for existing diffs/patches (Örjan Persson, PEAR Request #5373).
@@ -162,7 +162,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>beta</api>
    </stability>
    <date>2005-08-19</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Restore compatibility with PHP 4.2.0 (PEAR Bug #5152).
    </notes>
   </release>
@@ -176,7 +176,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>beta</api>
    </stability>
    <date>2005-08-16</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Fix Renderer::getParams() (PEAR Bug #4549)
 * Encode HTML entities in the inline renderer (Horde Bug #2181)
 * Fix endless loop in inline renderer with certain whitespaces (PEAR Bug #4879)
@@ -192,7 +192,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>beta</api>
    </stability>
    <date>2005-05-04</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Fixed variable name in Text_MappedDiff.
 * Removed output buffering code.
 * Fixed additional empty lines being added with the inline renderer (Bug 3730).
@@ -209,7 +209,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>beta</api>
    </stability>
    <date>2004-10-13</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Generalized Diff Renderer parameter handling.
 * Added an inline renderer contributed by Ciprian Popovici (ciprian@zuavra.net).
 * Fixed PHPDoc.
@@ -226,7 +226,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>alpha</api>
    </stability>
    <date>2004-05-13</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>Renamed final() and orig() methods to avoid conflict with final keyword in PHP5
    </notes>
   </release>
@@ -240,7 +240,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>alpha</api>
    </stability>
    <date>2004-03-16</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>Added optional xdiff support
    </notes>
   </release>
@@ -254,7 +254,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>alpha</api>
    </stability>
    <date>2004-01-09</date>
-   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>Initial package release
    </notes>
   </release>
