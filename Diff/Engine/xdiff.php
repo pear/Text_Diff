@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/xdiff.php,v 1.3 2007/09/25 21:59:46 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/xdiff.php,v 1.4 2007/12/03 00:04:40 chuck Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This class
  * uses the xdiff PECL package (http://pecl.php.net/package/xdiff) to compute
@@ -9,7 +9,7 @@
  * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
+ * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
  * @author  Jon Parise <jon@horde.org>
  * @package Text_Diff

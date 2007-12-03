@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.18 2007/09/25 22:10:36 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.19 2007/12/03 00:04:40 chuck Exp $
  *
  * A class to render Diffs in different formats.
  *
@@ -10,7 +10,7 @@
  * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
+ * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
  * @package Text_Diff
  */
