@@ -9,9 +9,9 @@
  * @package Text_Diff
  */
 
-include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer.php';
-include_once 'Text/Diff/Renderer/unified.php';
+require_once 'Text/Diff.php';
+require_once 'Text/Diff/Renderer.php';
+require_once 'Text/Diff/Renderer/unified.php';
 
 /* Make sure we have enough arguments. */
 if (count($argv) < 3) {
@@ -32,8 +32,8 @@ $lines1 = file($argv[1]);
 $lines2 = file($argv[2]);
 
 /* Create the Diff object. */
-$diff = &new Text_Diff($lines1, $lines2);
+$diff = new Text_Diff('auto', array($lines1, $lines2));
 
 /* Output the diff in unified format. */
-$renderer = &new Text_Diff_Renderer_unified();
+$renderer = new Text_Diff_Renderer_unified();
 echo $renderer->render($diff);

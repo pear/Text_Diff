@@ -1,26 +1,12 @@
 --TEST--
-Text_Diff: Inline renderer 2
+Text_Diff: Unified renderer 2
 --FILE--
 <?php
 include_once 'Text/Diff.php';
 include_once 'Text/Diff/Renderer/unified.php';
 
-$lines1 = array(
-    "This is a test.\n",
-    "Adding random text to simulate files.\n",
-    "Various Content.\n",
-    "More Content.\n",
-    "Testing diff and renderer.\n"
-);
-$lines2 = array(
-    "This is a test.\n",
-    "Adding random text to simulate files.\n",
-    "Inserting a line.\n",
-    "Various Content.\n",
-    "Replacing content.\n",
-    "Testing similarities and renderer.\n",
-    "Append content.\n"
-);
+$lines1 = file(dirname(__FILE__) . '/5.txt');
+$lines2 = file(dirname(__FILE__) . '/6.txt');
 
 $diff = &new Text_Diff($lines1, $lines2);
 
