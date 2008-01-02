@@ -1,12 +1,12 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.8 2007/12/03 00:04:40 chuck Exp $
+ * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.9 2008/01/02 11:12:19 jan Exp $
  *
  * "Unified" diff renderer.
  *
  * This class renders the diff in classic "unified diff" format.
  *
- * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
+ * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
