@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.7.2.1 2007/12/20 13:49:57 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.7.2.2 2008/01/02 11:30:53 jan Exp $
  *
  * Class used internally by Diff to actually compute the diffs.  This class is
  * implemented using native PHP code.
@@ -20,7 +20,7 @@
  * Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP version of this
  * code was written by him, and is used/adapted with his permission.
  *
- * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
+ * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.8 2007/12/20 13:49:57 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.9 2008/01/02 11:30:53 jan Exp $
  *
  * Text_Diff
  *
@@ -12,7 +12,7 @@
  * permission.
  *
  * Copyright 2004 Geoffrey T. Dairiki <dairiki@dairiki.org>
- * Copyright 2004-2007 The Horde Project (http://www.horde.org/)
+ * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
@@ -249,7 +249,7 @@ class Text_Diff {
 }
 
 /**
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.8 2007/12/20 13:49:57 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.9 2008/01/02 11:30:53 jan Exp $
  *
  * @package Text_Diff
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
