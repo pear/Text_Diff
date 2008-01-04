@@ -18,7 +18,7 @@
  * Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP version of this
  * code was written by him, and is used/adapted with his permission.
  *
- * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.7.2.3 2008/01/04 10:37:27 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.7.2.4 2008/01/04 10:38:10 jan Exp $
  *
  * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
  *
@@ -191,7 +191,8 @@ class Text_Diff_Engine_native {
                     continue;
                 }
                 $matches = $ymatches[$line];
-                foreach ($matches as $y) {
+                reset($matches);
+                while (list(, $y) = each($matches)) {
                     if (empty($this->in_seq[$y])) {
                         $k = $this->_lcsPos($y);
                         assert($k > 0);
@@ -199,12 +200,9 @@ class Text_Diff_Engine_native {
                         break;
                     }
                 }
-
-                while (list($junk, $y) = each($matches)) {
+                while (list(, $y) = each($matches)) {
                     if ($y > $this->seq[$k - 1]) {
-                        if (!assert($y <= $this->seq[$k])) {
-                            var_dump($y, $this->seq[$k]);
-                        }
+                        assert($y <= $this->seq[$k]);
                         /* Optimization: this is a common case: next match is
                          * just replacing previous match. */
                         $this->in_seq[$this->seq[$k]] = false;
