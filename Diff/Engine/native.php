@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.9 2008/01/04 10:07:50 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.10 2008/01/04 10:27:53 jan Exp $
  *
  * Class used internally by Text_Diff to actually compute the diffs. This
  * class is implemented using native PHP code.
@@ -190,7 +190,8 @@ class Text_Diff_Engine_native {
                     continue;
                 }
                 $matches = $ymatches[$line];
-                foreach ($matches as $y) {
+                reset($matches);
+                while (list(, $y) = each($matches)) {
                     if (empty($this->in_seq[$y])) {
                         $k = $this->_lcsPos($y);
                         assert($k > 0);
@@ -198,12 +199,9 @@ class Text_Diff_Engine_native {
                         break;
                     }
                 }
-
-                while (list($junk, $y) = each($matches)) {
+                while (list(, $y) = each($matches)) {
                     if ($y > $this->seq[$k - 1]) {
-                        if (!assert($y <= $this->seq[$k])) {
-                            var_dump($y, $this->seq[$k]);
-                        }
+                        assert($y <= $this->seq[$k]);
                         /* Optimization: this is a common case: next match is
                          * just replacing previous match. */
                         $this->in_seq[$this->seq[$k]] = false;
