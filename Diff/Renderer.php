@@ -1,16 +1,16 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.20 2008/01/02 11:12:18 jan Exp $
- *
  * A class to render Diffs in different formats.
  *
  * This class renders the diff in classic diff format. It is intended that
  * this class be customized via inheritance, to obtain fancier outputs.
  *
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.21 2008/01/04 10:07:50 jan Exp $
+ *
  * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
  *
- * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
+ * See the enclosed file COPYING for license information (LGPL). If you did
+ * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
  * @package Text_Diff
  */

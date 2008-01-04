@@ -1,7 +1,5 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.6 2008/01/02 11:12:18 jan Exp $
- *
  * Parses unified or context diffs output from eg. the diff utility.
  *
  * Example:
@@ -12,11 +10,13 @@
  * echo $renderer->render($diff);
  * </code>
  *
+ * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.7 2008/01/04 10:07:50 jan Exp $
+ *
  * Copyright 2005 Örjan Persson <o@42mm.org>
  * Copyright 2005-2008 The Horde Project (http://www.horde.org/)
  *
- * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://opensource.org/licenses/lgpl-license.php.
+ * See the enclosed file COPYING for license information (LGPL). If you did
+ * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
  * @author  Örjan Persson <o@42mm.org>
  * @package Text_Diff
