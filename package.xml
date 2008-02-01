@@ -108,7 +108,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>beta</api>
    </stability>
    <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
-   <notes>* Stable release; final non-bugfix PHP 4 release.</notes>
+   <notes>* Fixed assertion in the native engine with PHP 5 (PEAR Bug #12740).</notes>
   </release>
   <release>
    <date>2007-10-28</date>
