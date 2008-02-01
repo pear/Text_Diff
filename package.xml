@@ -4,26 +4,20 @@ http://pear.php.net/dtd/tasks-1.0.xsd
 http://pear.php.net/dtd/package-2.0
 http://pear.php.net/dtd/package-2.0.xsd">
  <name>Text_Diff</name>
- <channel>pear.php.net</channel>
+ <channel>pear.horde.org</channel>
  <summary>Engine for performing and rendering text diffs</summary>
  <description>This package provides a text-based diff engine and renderers for multiple diff output formats.</description>
  <lead>
   <name>Chuck Hagenbuch</name>
-  <user>chagenbu</user>
+  <user>chuck</user>
   <email>chuck@horde.org</email>
   <active>yes</active>
  </lead>
  <lead>
   <name>Jan Schneider</name>
-  <user>yunosh</user>
+  <user>jan</user>
   <email>jan@horde.org</email>
   <active>yes</active>
- </lead>
- <lead>
-  <name>Paul M Jones</name>
-  <user>pmjones</user>
-  <email>pmjones@memphis.edu</email>
-  <active>no</active>
  </lead>
  <date>2008-01-31</date>
  <version>
@@ -84,7 +78,6 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <file baseinstalldir="/Text" name="unified2.phpt" role="test" />
    </dir> <!-- /tests -->
    <file baseinstalldir="/Text" name="Diff.php" role="php" />
-   <file baseinstalldir="/Text" name="Diff3.php" role="php" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
