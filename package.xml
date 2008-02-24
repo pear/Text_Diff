@@ -19,17 +19,17 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2008-01-31</date>
+ <date>2008-12-31</date>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.1.0</release>
+  <api>1.1.0</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
- <notes>* Stable release; final non-bugfix PHP 4 release.</notes>
+ <notes>* Add countAddedLines() and countDeletedLines() methods (Christian King, PEAR Request #13183).</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
@@ -97,6 +97,19 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </dependencies>
  <phprelease />
  <changelog>
+  <release>
+    <date>2008-01-31</date>
+    <version>
+     <release>1.0.0</release>
+     <api>1.0.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
+    <notes>* Stable release; final non-bugfix PHP 4 release.</notes>
+  </release>
   <release>
    <date>2007-01-04</date>
    <version>
