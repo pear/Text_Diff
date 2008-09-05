@@ -98,7 +98,6 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <phprelease />
  <changelog>
   <release>
-    <date>2008-01-31</date>
     <version>
      <release>1.0.0</release>
      <api>1.0.0</api>
@@ -107,11 +106,11 @@ http://pear.php.net/dtd/package-2.0.xsd">
      <release>stable</release>
      <api>stable</api>
     </stability>
+    <date>2008-01-31</date>
     <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
     <notes>* Stable release; final non-bugfix PHP 4 release.</notes>
   </release>
   <release>
-   <date>2007-01-04</date>
    <version>
     <release>0.3.2</release>
     <api>0.3.0</api>
@@ -120,11 +119,11 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <release>beta</release>
     <api>beta</api>
    </stability>
+   <date>2007-01-04</date>
    <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Fixed assertion in the native engine with PHP 5 (PEAR Bug #12740).</notes>
   </release>
   <release>
-   <date>2007-10-28</date>
    <version>
     <release>0.3.1</release>
     <api>0.3.0</api>
@@ -133,12 +132,12 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <release>beta</release>
     <api>beta</api>
    </stability>
+   <date>2007-10-28</date>
    <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Fixed off-by-one errors with line numbers in default renderer output (Milian Wolff, PEAR Bugs #7839, #12111).
 * Restore compatibility with PHP 4 in the shell diff engine.</notes>
   </release>
   <release>
-   <date>2007-09-20</date>
    <version>
     <release>0.3.0</release>
     <api>0.3.0</api>
@@ -147,6 +146,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <release>beta</release>
     <api>beta</api>
    </stability>
+   <date>2007-09-20</date>
    <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
    <notes>* Converted to package.xml 2.0.
 * Added context diff renderer.
