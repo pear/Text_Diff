@@ -19,6 +19,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
+ <date>2008-09-10</date>
  <version>
   <release>1.1.0</release>
   <api>1.1.0</api>
@@ -27,7 +28,6 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <release>stable</release>
   <api>stable</api>
  </stability>
- <date>2008-09-10</date>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
  <notes>* Add countAddedLines() and countDeletedLines() methods (Christian King, PEAR Request #13183).
 * Improve string engine if patch data has no header (PEAR Bug #14533).
