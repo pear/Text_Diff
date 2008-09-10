@@ -10,7 +10,7 @@
  * echo $renderer->render($diff);
  * </code>
  *
- * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.5.2.3 2008/01/04 10:37:27 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.5.2.4 2008/09/10 08:15:17 jan Exp $
  *
  * Copyright 2005 Örjan Persson <o@42mm.org>
  * Copyright 2005-2008 The Horde Project (http://www.horde.org/)
@@ -48,7 +48,7 @@ class Text_Diff_Engine_string {
             $unified = strpos($diff, '---');
             if ($context === $unified) {
                 return PEAR::raiseError('Type of diff could not be detected');
-            } elseif ($context === false || $context === false) {
+            } elseif ($context === false || $unified === false) {
                 $mode = $context !== false ? 'context' : 'unified';
             } else {
                 $mode = $context < $unified ? 'context' : 'unified';
