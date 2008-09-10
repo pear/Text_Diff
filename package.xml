@@ -30,6 +30,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <date>2008-09-10</date>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
  <notes>* Add countAddedLines() and countDeletedLines() methods (Christian King, PEAR Request #13183).
+* Improve string engine if patch data has no header (PEAR Bug #14533).
 * Fix autodetection of diff type in string engine (PEAR Bug #14625).</notes>
  <contents>
   <dir name="/">
