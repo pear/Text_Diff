@@ -10,10 +10,10 @@
  * echo $renderer->render($diff);
  * </code>
  *
- * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.9 2008/09/10 08:13:43 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/string.php,v 1.10 2009/01/06 17:49:52 jan Exp $
  *
  * Copyright 2005 Örjan Persson <o@42mm.org>
- * Copyright 2005-2008 The Horde Project (http://www.horde.org/)
+ * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.

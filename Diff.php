@@ -6,10 +6,10 @@
  * The original PHP version of this code was written by Geoffrey T. Dairiki
  * <dairiki@dairiki.org>, and is used/adapted with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.27 2008/02/24 10:46:46 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.28 2009/01/06 17:49:52 jan Exp $
  *
  * Copyright 2004 Geoffrey T. Dairiki <dairiki@dairiki.org>
- * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
+ * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.

@@ -18,9 +18,9 @@
  * Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP version of this
  * code was written by him, and is used/adapted with his permission.
  *
- * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.11 2008/09/10 08:34:37 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.12 2009/01/06 17:49:52 jan Exp $
  *
- * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
+ * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.

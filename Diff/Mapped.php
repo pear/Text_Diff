@@ -1,8 +1,8 @@
 <?php
 /**
- * $Horde: framework/Text_Diff/Diff/Mapped.php,v 1.5 2008/01/04 10:07:50 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Mapped.php,v 1.6 2009/01/06 17:49:52 jan Exp $
  *
- * Copyright 2007-2008 The Horde Project (http://www.horde.org/)
+ * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
