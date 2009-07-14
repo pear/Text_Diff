@@ -6,7 +6,7 @@
  * The original PHP version of this code was written by Geoffrey T. Dairiki
  * <dairiki@dairiki.org>, and is used/adapted with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.28 2009/01/06 17:49:52 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.29 2009/07/14 00:25:31 mrubinsk Exp $
  *
  * Copyright 2004 Geoffrey T. Dairiki <dairiki@dairiki.org>
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
@@ -63,7 +63,7 @@ class Text_Diff {
     {
         return $this->_edits;
     }
-    
+
     /**
      * returns the number of new (added) lines in a given diff.
      *
@@ -83,7 +83,7 @@ class Text_Diff {
         }
         return $count;
     }
-    
+
     /**
      * Returns the number of deleted (removed) lines in a given diff.
      *
@@ -380,7 +380,7 @@ class Text_Diff_Op_copy extends Text_Diff_Op {
 
     function &reverse()
     {
-        $reverse = &new Text_Diff_Op_copy($this->final, $this->orig);
+        $reverse = new Text_Diff_Op_copy($this->final, $this->orig);
         return $reverse;
     }
 
@@ -402,7 +402,7 @@ class Text_Diff_Op_delete extends Text_Diff_Op {
 
     function &reverse()
     {
-        $reverse = &new Text_Diff_Op_add($this->orig);
+        $reverse = new Text_Diff_Op_add($this->orig);
         return $reverse;
     }
 
@@ -424,7 +424,7 @@ class Text_Diff_Op_add extends Text_Diff_Op {
 
     function &reverse()
     {
-        $reverse = &new Text_Diff_Op_delete($this->final);
+        $reverse = new Text_Diff_Op_delete($this->final);
         return $reverse;
     }
 
@@ -446,7 +446,7 @@ class Text_Diff_Op_change extends Text_Diff_Op {
 
     function &reverse()
     {
-        $reverse = &new Text_Diff_Op_change($this->final, $this->orig);
+        $reverse = new Text_Diff_Op_change($this->final, $this->orig);
         return $reverse;
     }
 
