@@ -25,9 +25,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>pmjones@memphis.edu</email>
   <active>no</active>
  </lead>
- <date>2008-09-10</date>
+ <date>2009-07-24</date>
  <version>
-  <release>1.1.0</release>
+  <release>1.1.1</release>
   <api>1.1.0</api>
  </version>
  <stability>
@@ -35,9 +35,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <api>stable</api>
  </stability>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
- <notes>* Add countAddedLines() and countDeletedLines() methods (Christian King, PEAR Request #13183).
-* Improve string engine if patch data has no header (PEAR Bug #14533).
-* Fix autodetection of diff type in string engine (PEAR Bug #14625).</notes>
+ <notes>* Make sure that the diff string ends with a line break (PEAR Bug #14533).
+* Fix notices if xdiff engine creates empty lines (PEAR Bug #16240).</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
@@ -106,6 +105,21 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </dependencies>
  <phprelease />
  <changelog>
+  <release>
+   <date>2008-09-10</date>
+   <version>
+    <release>1.1.0</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
+   <notes>* Add countAddedLines() and countDeletedLines() methods (Christian King, PEAR Request #13183).
+* Improve string engine if patch data has no header (PEAR Bug #14533).
+* Fix autodetection of diff type in string engine (PEAR Bug #14625).</notes>
+  </release>
   <release>
     <version>
      <release>1.0.0</release>
