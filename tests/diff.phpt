@@ -7,7 +7,7 @@ include_once 'Text/Diff.php';
 $lines1 = file(dirname(__FILE__) . '/1.txt');
 $lines2 = file(dirname(__FILE__) . '/2.txt');
 
-$diff = &new Text_Diff($lines1, $lines2);
+$diff = new Text_Diff('native', array($lines1, $lines2));
 echo strtolower(print_r($diff, true));
 ?>
 --EXPECT--

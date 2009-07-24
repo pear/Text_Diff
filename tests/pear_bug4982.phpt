@@ -16,7 +16,7 @@ EOT;
 
 $oldpieces = explode("\n", $oldtext);
 $newpieces = explode("\n", $newtext);
-$diff = new Text_Diff ($oldpieces, $newpieces);
+$diff = new Text_Diff('native', array($oldpieces, $newpieces));
 
 $renderer = new Text_Diff_Renderer_inline();
 echo $renderer->render($diff);
