@@ -27,9 +27,9 @@ EOT;
 
 $oldpieces = explode ("\n", $oldtext);
 $newpieces = explode ("\n", $newtext);
-$diff = &new Text_Diff ($oldpieces, $newpieces);
+$diff = new Text_Diff('native', array($oldpieces, $newpieces));
 
-$renderer = &new Text_Diff_Renderer_unified(array('leading_context_lines' => 3, 'trailing_context_lines' => 3));
+$renderer = new Text_Diff_Renderer_unified(array('leading_context_lines' => 3, 'trailing_context_lines' => 3));
 
 // We need to use var_dump, as the test runner strips trailing empty lines.
 var_dump($renderer->render($diff));
