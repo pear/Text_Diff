@@ -36,7 +36,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
  <notes>* Make sure that the diff string ends with a line break (PEAR Bug #14533).
-* Fix notices if xdiff engine creates empty lines (PEAR Bug #16240).</notes>
+* Fix notices if xdiff engine creates empty lines (PEAR Bug #16240).
+* Fix inline renderer if xdiff extension is installed.</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
