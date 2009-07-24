@@ -78,6 +78,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <file baseinstalldir="/Text" name="unified.patch" role="test" />
     <file baseinstalldir="/Text" name="unified.phpt" role="test" />
     <file baseinstalldir="/Text" name="unified2.phpt" role="test" />
+    <file baseinstalldir="/Text" name="xdiff.phpt" role="test" />
    </dir> <!-- /tests -->
    <file baseinstalldir="/Text" name="Diff.php" role="php" />
   </dir> <!-- / -->
