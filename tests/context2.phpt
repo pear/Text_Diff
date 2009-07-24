@@ -8,9 +8,9 @@ include_once 'Text/Diff/Renderer/context.php';
 $lines1 = file(dirname(__FILE__) . '/5.txt');
 $lines2 = file(dirname(__FILE__) . '/6.txt');
 
-$diff = &new Text_Diff($lines1, $lines2);
+$diff = new Text_Diff('native', array($lines1, $lines2));
 
-$renderer = &new Text_Diff_Renderer_context();
+$renderer = new Text_Diff_Renderer_context();
 echo $renderer->render($diff);
 ?>
 --EXPECT--

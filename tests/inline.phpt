@@ -8,9 +8,9 @@ include_once 'Text/Diff/Renderer/inline.php';
 $lines1 = file(dirname(__FILE__) . '/1.txt');
 $lines2 = file(dirname(__FILE__) . '/2.txt');
 
-$diff = &new Text_Diff($lines1, $lines2);
+$diff = new Text_Diff('native', array($lines1, $lines2));
 
-$renderer = &new Text_Diff_Renderer_inline();
+$renderer = new Text_Diff_Renderer_inline();
 echo $renderer->render($diff);
 ?>
 --EXPECT--

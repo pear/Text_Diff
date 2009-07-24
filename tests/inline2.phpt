@@ -22,9 +22,9 @@ $lines2 = array(
     "Append content.\n"
 );
 
-$diff = &new Text_Diff($lines1, $lines2);
+$diff = new Text_Diff('native', array($lines1, $lines2));
 
-$renderer = &new Text_Diff_Renderer_inline();
+$renderer = new Text_Diff_Renderer_inline();
 echo $renderer->render($diff);
 ?>
 --EXPECT--

@@ -31,9 +31,9 @@ EOT;
 
 $oldpieces = explode ("\n", $oldtext);
 $newpieces = explode ("\n", $newtext);
-$diff = &new Text_Diff ($oldpieces, $newpieces);
+$diff = new Text_Diff('native', array($oldpieces, $newpieces));
 
-$renderer = &new Text_Diff_Renderer();
+$renderer = new Text_Diff_Renderer();
 
 // We need to use var_dump, as the test runner strips trailing empty lines.
 echo($renderer->render($diff));

@@ -8,8 +8,8 @@ include_once 'Text/Diff/Renderer/inline.php';
 $from = array('Line 1',  'Another line');
 $to   = array('Line  1', 'Another line');
 
-$diff = &new Text_Diff ($from, $to);
-$renderer = &new Text_Diff_Renderer_inline();
+$diff = new Text_Diff('native', array($from, $to));
+$renderer = new Text_Diff_Renderer_inline();
 
 echo $renderer->render($diff);
 ?>

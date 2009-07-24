@@ -22,7 +22,7 @@ $b = <<<QQ
 <li>Increase access to mass transit systems</li>
 QQ;
 
-$diff = new Text_Diff(explode("\n", $b), explode("\n", $a));
+$diff = new Text_Diff('native', array(explode("\n", $b), explode("\n", $a)));
 $renderer = new Text_Diff_Renderer_inline();
 $renderer->render($diff);
 
