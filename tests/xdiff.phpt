@@ -1,5 +1,7 @@
 --TEST--
 Text_Diff: Text_Diff_Engine_xdiff test.
+--SKIPIF--
+<?php if (!extension_loaded('xdiff')) echo 'skip xdiff extension not installed'; ?>
 --FILE--
 <?php
 
