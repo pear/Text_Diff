@@ -25,19 +25,17 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>pmjones@memphis.edu</email>
   <active>no</active>
  </lead>
- <date>2009-07-24</date>
+ <date>2009-12-31</date>
  <version>
-  <release>1.1.1</release>
-  <api>1.1.0</api>
+  <release>1.2.0</release>
+  <api>1.2.0</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
- <notes>* Make sure that the diff string ends with a line break (PEAR Bug #14533).
-* Fix notices if xdiff engine creates empty lines (PEAR Bug #16240).
-* Fix inline renderer if xdiff extension is installed.</notes>
+ <notes>* Add split_characters option to inline renderer, to split down to character-level.</notes>
  <contents>
   <dir name="/">
    <dir name="Diff">
@@ -107,6 +105,21 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </dependencies>
  <phprelease />
  <changelog>
+  <release>
+   <date>2009-07-24</date>
+   <version>
+    <release>1.1.1</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
+   <notes>* Make sure that the diff string ends with a line break (PEAR Bug #14533).
+* Fix notices if xdiff engine creates empty lines (PEAR Bug #16240).
+* Fix inline renderer if xdiff extension is installed.</notes>
+  </release>
   <release>
    <date>2008-09-10</date>
    <version>
