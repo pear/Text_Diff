@@ -40,22 +40,26 @@ http://pear.php.net/dtd/package-2.0.xsd">
 * Fix inline renderer if xdiff extension is installed.</notes>
  <contents>
   <dir name="/">
-   <dir name="Diff">
-    <dir name="Engine">
-     <file baseinstalldir="/Text" name="native.php" role="php" />
-     <file baseinstalldir="/Text" name="shell.php" role="php" />
-     <file baseinstalldir="/Text" name="string.php" role="php" />
-     <file baseinstalldir="/Text" name="xdiff.php" role="php" />
-    </dir> <!-- /Diff/Engine -->
-    <dir name="Renderer">
-     <file baseinstalldir="/Text" name="context.php" role="php" />
-     <file baseinstalldir="/Text" name="inline.php" role="php" />
-     <file baseinstalldir="/Text" name="unified.php" role="php" />
-    </dir> <!-- /Diff/Renderer -->
-    <file baseinstalldir="/Text" name="Mapped.php" role="php" />
-    <file baseinstalldir="/Text" name="Renderer.php" role="php" />
-    <file baseinstalldir="/Text" name="ThreeWay.php" role="php" />
-   </dir> <!-- /Diff -->
+   <dir name="Text">
+    <dir name="Diff">
+     <dir name="Engine">
+      <file name="native.php" role="php" />
+      <file name="shell.php" role="php" />
+      <file name="string.php" role="php" />
+      <file name="xdiff.php" role="php" />
+     </dir> <!-- /Diff/Engine -->
+     <dir name="Renderer">
+      <file name="context.php" role="php" />
+      <file name="inline.php" role="php" />
+      <file name="unified.php" role="php" />
+     </dir> <!-- /Diff/Renderer -->
+     <file name="Mapped.php" role="php" />
+     <file name="Renderer.php" role="php" />
+     <file name="ThreeWay.php" role="php" />
+    </dir> <!-- /Diff -->
+    <file name="Diff.php" role="php" />
+    <file name="Diff3.php" role="php" />
+   </dir>
    <dir name="docs">
     <dir name="examples">
      <file baseinstalldir="/Text" name="1.txt" role="doc" />
@@ -86,8 +90,6 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <file baseinstalldir="/Text" name="unified2.phpt" role="test" />
     <file baseinstalldir="/Text" name="xdiff.phpt" role="test" />
    </dir> <!-- /tests -->
-   <file baseinstalldir="/Text" name="Diff.php" role="php" />
-   <file baseinstalldir="/Text" name="Diff3.php" role="php" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
