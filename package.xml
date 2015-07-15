@@ -25,19 +25,19 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>pmjones@memphis.edu</email>
   <active>no</active>
  </lead>
- <date>2009-07-24</date>
+ <date>2015-07-16</date>
  <version>
-  <release>1.1.1</release>
-  <api>1.1.0</api>
+  <release>1.2.0</release>
+  <api>1.2.0</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
- <notes>* Make sure that the diff string ends with a line break (PEAR Bug #14533).
-* Fix notices if xdiff engine creates empty lines (PEAR Bug #16240).
-* Fix inline renderer if xdiff extension is installed.</notes>
+ <notes>
+* Add PHP 7 compatibility; drop PHP 4 compatibility
+ </notes>
  <contents>
   <dir name="/">
    <dir name="Text">
@@ -78,15 +78,19 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <file baseinstalldir="/Text" name="context.phpt" role="test" />
     <file baseinstalldir="/Text" name="context2.phpt" role="test" />
     <file baseinstalldir="/Text" name="diff.phpt" role="test" />
+    <file baseinstalldir="/Text" name="diff_shell.phpt" role="test" />
     <file baseinstalldir="/Text" name="inline.phpt" role="test" />
     <file baseinstalldir="/Text" name="inline2.phpt" role="test" />
     <file baseinstalldir="/Text" name="pear_bug12740.phpt" role="test" />
     <file baseinstalldir="/Text" name="pear_bug4879.phpt" role="test" />
+    <file baseinstalldir="/Text" name="pear_bug4982.phpt" role="test" />
     <file baseinstalldir="/Text" name="pear_bug6251.phpt" role="test" />
     <file baseinstalldir="/Text" name="pear_bug6428.phpt" role="test" />
+    <file baseinstalldir="/Text" name="pear_bug7839.phpt" role="test" />
     <file baseinstalldir="/Text" name="string.phpt" role="test" />
     <file baseinstalldir="/Text" name="unified.patch" role="test" />
     <file baseinstalldir="/Text" name="unified.phpt" role="test" />
+    <file baseinstalldir="/Text" name="unified2.patch" role="test" />
     <file baseinstalldir="/Text" name="unified2.phpt" role="test" />
     <file baseinstalldir="/Text" name="xdiff.phpt" role="test" />
    </dir> <!-- /tests -->
@@ -95,10 +99,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <dependencies>
   <required>
    <php>
-    <min>4.2.0</min>
+    <min>5.2.0</min>
    </php>
    <pearinstaller>
-    <min>1.4.0b1</min>
+    <min>1.9.0</min>
    </pearinstaller>
   </required>
   <optional>
@@ -109,6 +113,41 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </dependencies>
  <phprelease />
  <changelog>
+
+  <release>
+   <date>2015-07-16</date>
+   <version>
+    <release>1.2.0</release>
+    <api>1.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
+   <notes>
+    * Add PHP 7 compatibility; drop PHP 4 compatibility
+   </notes>
+  </release>
+
+  <release>
+   <date>2009-07-24</date>
+   <version>
+    <release>1.1.1</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
+   <notes>
+    * Make sure that the diff string ends with a line break (PEAR Bug #14533).
+    * Fix notices if xdiff engine creates empty lines (PEAR Bug #16240).
+    * Fix inline renderer if xdiff extension is installed.
+   </notes>
+  </release>
+
   <release>
    <date>2008-09-10</date>
    <version>
@@ -124,6 +163,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 * Improve string engine if patch data has no header (PEAR Bug #14533).
 * Fix autodetection of diff type in string engine (PEAR Bug #14625).</notes>
   </release>
+
   <release>
     <version>
      <release>1.0.0</release>
