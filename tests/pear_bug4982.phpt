@@ -1,5 +1,9 @@
 --TEST--
 Text_Diff: PEAR Bug #4982 (wrong line breaks with inline renderer)
+--SKIPIF--
+<?php
+echo "skip Bug has been accepted but not fixed yet.";
+?>
 --FILE--
 <?php
 include_once 'Text/Diff.php';
