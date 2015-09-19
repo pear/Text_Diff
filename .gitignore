@@ -1,2 +1,6 @@
 README.html
 /dist/
+
+.idea
+/vendor/
+composer.phar

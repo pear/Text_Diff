@@ -6,8 +6,9 @@ php:
   - 5.5
   - 5.4
   - 5.3
-  - 5.2
 script:
   - umask 0022
   - pear run-tests -r tests
   - pear package package.xml
+before_script:
+  - composer install

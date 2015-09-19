@@ -1,0 +1,16 @@
+{
+    "name": "pear/Text_Diff",
+    "description": "Engine for performing and rendering text diffs",
+    "type": "library",
+    "keywords": [
+        "pear",
+        "text",
+        "diff"
+    ],
+    "homepage": "http://pear.php.net/package/Text_Diff",
+    "autoload": {
+        "classmap": [
+            "Text/"
+        ]
+    }
+}
