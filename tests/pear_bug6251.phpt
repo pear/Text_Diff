@@ -2,8 +2,7 @@
 Text_Diff: PEAR Bug #6251 (too much trailing context)
 --FILE--
 <?php
-include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer/unified.php';
+include_once 'vendor/autoload.php';
 
 $oldtext = <<<EOT
 

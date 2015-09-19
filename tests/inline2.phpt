@@ -2,8 +2,7 @@
 Text_Diff: Inline renderer 2
 --FILE--
 <?php
-include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer/inline.php';
+include_once 'vendor/autoload.php';
 
 $lines1 = array(
     "This is a test.\n",

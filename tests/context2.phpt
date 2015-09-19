@@ -2,8 +2,7 @@
 Text_Diff: Context renderer 2
 --FILE--
 <?php
-include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer/context.php';
+include_once 'vendor/autoload.php';
 
 $lines1 = file(dirname(__FILE__) . '/5.txt');
 $lines2 = file(dirname(__FILE__) . '/6.txt');
