@@ -1,2 +1,5 @@
-README.html
+/.idea
+/composer.phar
 /dist/
+/README.html
+/vendor/

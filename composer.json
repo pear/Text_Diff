@@ -1,0 +1,21 @@
+{
+    "name": "pear/text_diff",
+    "description": "Engine for performing and rendering text diffs",
+    "license": "LGPL-3.0",
+    "type": "library",
+    "keywords": [
+        "pear",
+        "text",
+        "diff"
+    ],
+    "homepage": "http://pear.php.net/package/Text_Diff",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Text_Diff",
+        "source": "https://github.com/pear/Text_Diff"
+    },
+    "autoload": {
+        "classmap": [
+            "Text/"
+        ]
+    }
+}

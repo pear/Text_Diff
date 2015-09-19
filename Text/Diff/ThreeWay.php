@@ -14,7 +14,9 @@
  */
 
 /** Text_Diff */
-require_once 'Text/Diff.php';
+if (!class_exists('Text_Diff')) {
+    require_once 'Text/Diff.php';
+}
 
 /**
  * A class for computing three way diffs.
