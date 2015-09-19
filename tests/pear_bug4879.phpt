@@ -2,8 +2,7 @@
 Text_Diff: PEAR Bug #4879 (inline renderer hangs on numbers in input string)
 --FILE--
 <?php
-include_once 'Text/Diff.php';
-include_once 'Text/Diff/Renderer/inline.php';
+include_once 'vendor/autoload.php';
 
 $oldtext = <<<EOT
 Common text

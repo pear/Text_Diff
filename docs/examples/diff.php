@@ -9,9 +9,7 @@
  * @package Text_Diff
  */
 
-require_once 'Text/Diff.php';
-require_once 'Text/Diff/Renderer.php';
-require_once 'Text/Diff/Renderer/unified.php';
+require_once 'vendor/autoload.php';
 
 /* Make sure we have enough arguments. */
 if (count($argv) < 3) {
