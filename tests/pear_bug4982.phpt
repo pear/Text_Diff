@@ -6,7 +6,8 @@ echo "skip Bug has been accepted but not fixed yet.";
 ?>
 --FILE--
 <?php
-include_once 'vendor/autoload.php';
+include_once 'Text/Diff.php';
+include_once 'Text/Diff/Renderer/inline.php';
 
 $oldtext = <<<EOT
 This line is different in 1.txt

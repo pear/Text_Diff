@@ -4,7 +4,7 @@ Text_Diff: Text_Diff_Engine_string test.
 <?php
 
 require_once 'PEAR.php';
-include_once 'vendor/autoload.php';
+require_once 'Text/Diff.php';
 
 $unified = file_get_contents(dirname(__FILE__) . '/unified.patch');
 $diff_u = new Text_Diff('string', array($unified));

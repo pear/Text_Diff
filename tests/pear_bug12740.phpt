@@ -3,7 +3,8 @@ Text_Diff: PEAR Bug #12740 (failed assertion)
 --FILE--
 <?php
 
-include_once 'vendor/autoload.php';
+require dirname(__FILE__) . '/../Text/Diff.php';
+require dirname(__FILE__) . '/../Text/Diff/Renderer/inline.php';
 
 $a = <<<QQ
 <li>The tax credit amounts to 30% of the cost of the system, with a

@@ -6,7 +6,8 @@ Text_Diff: Text_Diff_Engine_xdiff test.
 <?php
 
 require_once 'PEAR.php';
-include_once 'vendor/autoload.php';
+require_once 'Text/Diff.php';
+require_once 'Text/Diff/Renderer/unified.php';
 
 $lines1 = file(dirname(__FILE__) . '/1.txt');
 $lines2 = file(dirname(__FILE__) . '/2.txt');

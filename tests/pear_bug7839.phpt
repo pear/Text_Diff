@@ -2,7 +2,8 @@
 Text_Diff: PEAR Bug #7839 ()
 --FILE--
 <?php
-include_once 'vendor/autoload.php';
+include_once 'Text/Diff.php';
+include_once 'Text/Diff/Renderer.php';
 
 $oldtext = <<<EOT
 This is line 1.

@@ -2,7 +2,8 @@
 Text_Diff: Unified renderer
 --FILE--
 <?php
-include_once 'vendor/autoload.php';
+include_once 'Text/Diff.php';
+include_once 'Text/Diff/Renderer/unified.php';
 
 $lines1 = file(dirname(__FILE__) . '/1.txt');
 $lines2 = file(dirname(__FILE__) . '/2.txt');
