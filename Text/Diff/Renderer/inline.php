@@ -13,6 +13,11 @@
  * @package Text_Diff
  */
 
+/** Text_Diff_Renderer */
+if (!class_exists('Text_Diff_Renderer')) {
+    require_once 'Text/Diff/Renderer.php';
+}
+
 /**
  * "Inline" diff renderer.
  *

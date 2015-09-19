@@ -50,6 +50,10 @@ class Text_Diff {
         }
 
         $class = 'Text_Diff_Engine_' . $engine;
+        if (!class_exists($class)) {
+            require_once 'Text/Diff/Engine/' . $engine . '.php';
+        }
+
         $diff_engine = new $class();
 
         $this->_edits = call_user_func_array(array($diff_engine, 'diff'), $params);

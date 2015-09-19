@@ -9,7 +9,20 @@
  * @package Text_Diff
  */
 
-require_once 'vendor/autoload.php';
+/** Text_Diff */
+if (!class_exists('Text_Diff')) {
+    require_once 'Text/Diff.php';
+}
+
+/** Text_Diff_Renderer */
+if (!class_exists('Text_Diff_Renderer')) {
+    require_once 'Text/Diff/Renderer.php';
+}
+
+/** Text_Diff_Renderer_unified */
+if (!class_exists('Text_Diff_Renderer_unified')) {
+    require_once 'Text/Diff/Renderer/unified.php';
+}
 
 /* Make sure we have enough arguments. */
 if (count($argv) < 3) {
