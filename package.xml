@@ -25,10 +25,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>pmjones@memphis.edu</email>
   <active>no</active>
  </lead>
- <date>2015-09-18</date>
+ <date>2017-03-08</date>
  <version>
-  <release>1.2.1</release>
-  <api>1.2.1</api>
+  <release>1.2.2</release>
+  <api>1.2.2</api>
  </version>
  <stability>
   <release>stable</release>
@@ -36,9 +36,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
  <notes>
-  * Use PHP5 style class constructors [cweiske]
-  * Fix strict standards error messages for PHP 5.6 [Julien Boulen]
+  * Fully use PHP5 constructors
+  * Make statically called method static
  </notes>
+
  <contents>
   <dir name="/">
    <dir name="Text">
@@ -97,6 +98,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
    </dir> <!-- /tests -->
   </dir> <!-- / -->
  </contents>
+
  <dependencies>
   <required>
    <php>
@@ -114,6 +116,23 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </dependencies>
  <phprelease />
  <changelog>
+
+  <release>
+   <date>2017-03-08</date>
+   <version>
+    <release>1.2.2</release>
+    <api>1.2.2</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
+   <notes>
+    * Fully use PHP5 constructors
+    * Make statically called method static
+   </notes>
+  </release>
 
   <release>
    <date>2015-09-18</date>
