@@ -28,7 +28,18 @@
  * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
  * @package Text_Diff
  */
-class Text_Diff_Engine_native {
+class Text_Diff_Engine_native
+{
+
+    public $xchanged;
+    public $ychanged;
+    public $xv;
+    public $yv;
+    public $xind;
+    public $yind;
+    public $seq;
+    public $in_seq;
+    public $lcs;
 
     function diff($from_lines, $to_lines)
     {
@@ -148,7 +159,7 @@ class Text_Diff_Engine_native {
      * match.  The caller must trim matching lines from the beginning and end
      * of the portions it is going to specify.
      */
-    function _diag ($xoff, $xlim, $yoff, $ylim, $nchunks)
+    function _diag($xoff, $xlim, $yoff, $ylim, $nchunks)
     {
         $flip = false;
 
@@ -192,15 +203,16 @@ class Text_Diff_Engine_native {
                 }
                 $matches = $ymatches[$line];
                 reset($matches);
-                foreach ($matches as list(, $y)) {
+                while ($y = current($matches)) {
                     if (empty($this->in_seq[$y])) {
                         $k = $this->_lcsPos($y);
                         assert($k > 0);
                         $ymids[$k] = $ymids[$k - 1];
                         break;
                     }
+                    next($matches);
                 }
-                foreach ($matches as list(, $y)) {
+                while ($y = current($matches)) {
                     if ($y > $this->seq[$k - 1]) {
                         assert($y <= $this->seq[$k]);
                         /* Optimization: this is a common case: next match is
@@ -213,6 +225,7 @@ class Text_Diff_Engine_native {
                         assert($k > 0);
                         $ymids[$k] = $ymids[$k - 1];
                     }
+                    next($matches);
                 }
             }
         }
@@ -268,7 +281,7 @@ class Text_Diff_Engine_native {
      * Note that XLIM, YLIM are exclusive bounds.  All line numbers are
      * origin-0 and discarded lines are not counted.
      */
-    function _compareseq ($xoff, $xlim, $yoff, $ylim)
+    function _compareseq($xoff, $xlim, $yoff, $ylim)
     {
         /* Slide down the bottom initial diagonal. */
         while ($xoff < $xlim && $yoff < $ylim
@@ -309,7 +322,7 @@ class Text_Diff_Engine_native {
             reset($seps);
             $pt1 = $seps[0];
             while ($pt2 = next($seps)) {
-                $this->_compareseq ($pt1[0], $pt2[0], $pt1[1], $pt2[1]);
+                $this->_compareseq($pt1[0], $pt2[0], $pt1[1], $pt2[1]);
                 $pt1 = $pt2;
             }
         }
