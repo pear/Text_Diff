@@ -233,7 +233,7 @@ class Text_Diff_Engine_native
             }
         }
 
-        $seps[] = $flip ? array($yoff, $xoff) : array($xoff, $yoff);
+        $seps = array($flip ? array($yoff, $xoff) : array($xoff, $yoff));
         $ymid = $ymids[$this->lcs];
         for ($n = 0; $n < $nchunks - 1; $n++) {
             $x1 = $xoff + (int)(($numer + ($xlim - $xoff) * $n) / $nchunks);
