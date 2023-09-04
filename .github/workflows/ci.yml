@@ -1,0 +1,47 @@
+---
+name: Run Text_Diff Tests
+on:
+  push:
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        php:
+          - 7.4
+          - 7
+          - 5.6
+          - 5.5
+          - 5.4
+          - 5.3
+        os: [ubuntu-latest, ubuntu-22.04]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: xdiff
+          tools: composer, PEAR
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+      - name: Run tests
+        run: |-
+          composer install
+          umask 0022
+          if [ ${{ matrix.php }} == 5.3 ] ; then
+            pear run-tests -r tests
+          else
+            pear run-tests -d -r tests
+          fi
+          pear package package.xml
+          composer validate
