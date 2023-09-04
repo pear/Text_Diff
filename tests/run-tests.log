@@ -1,0 +1,18 @@
+TOTAL TIME: 00:07
+0 PASSED TESTS
+2 SKIPPED TESTS
+14 FAILED TESTS:
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/context.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/context2.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/diff.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/diff_shell.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/inline.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/inline2.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/pear_bug4879.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/pear_bug6251.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/pear_bug6428.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/pear_bug7839.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/pear_bug12740.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/string.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/unified.phpt
+/cygdrive/d/mdeweerd/workspace/Text_Diff/tests/unified2.phpt
