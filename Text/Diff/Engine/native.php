@@ -74,11 +74,11 @@ class Text_Diff_Engine_native
         }
 
         // Ignore lines which do not exist in both files.
-        $xhash=[];
+        $xhash = [];
         for ($xi = $skip; $xi < $n_from - $endskip; $xi++) {
             $xhash[$from_lines[$xi]] = 1;
         }
-        $yhash=[];
+        $yhash = [];
         for ($yi = $skip; $yi < $n_to - $endskip; $yi++) {
             $line = $to_lines[$yi];
             if (($this->ychanged[$yi] = empty($xhash[$line]))) {
@@ -173,7 +173,7 @@ class Text_Diff_Engine_native
                 = array($yoff, $ylim, $xoff, $xlim);
         }
 
-        $ymatches=array();
+        $ymatches = array();
         if ($flip) {
             for ($i = $ylim - 1; $i >= $yoff; $i--) {
                 $ymatches[$this->xv[$i]][] = $i;
