@@ -1,51 +1,39 @@
----
-name: Run Text_Diff Tests
 on:
   push:
+    branches:
+      - master
   pull_request:
-    branches: [master]
+
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
+  test:
+    runs-on: ${{ matrix.operating-system }}
     strategy:
+      fail-fast: false
       matrix:
-        php:
-          - 8.3
-          - 8.2
-          - 8.1
-          - 8.0
-          - 7.4
-          - 7
-          - 5.6
-          - 5.5
-          - 5.4
-          - 5.3
-        os: [ubuntu-latest, ubuntu-22.04]
+        operating-system: [ ubuntu-latest ]
+        php: [ '5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3' ]
+        dependencies: [ 'locked' ]
+
+    name: PHP ${{ matrix.php }} on ${{ matrix.operating-system }} with ${{ matrix.dependencies }} dependencies
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        name: Checkout repository
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: xdiff
-          tools: composer, PEAR
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v3
+          coverage: none
+
+      - uses: ramsey/composer-install@v1
         with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-
+          dependency-versions: ${{ matrix.dependencies }}
+
       - name: Run tests
-        run: |-
-          composer install
+        run: |
           umask 0022
-          if [ ${{ matrix.php }} == 5.3 ] ; then
-            pear run-tests -r tests
-          else
-            pear run-tests -d -r tests
-          fi
+          sudo pear run-tests --ini=" -d include_path=.:/usr/share/php" -q -d -r ./tests
           pear package package.xml
+          composer install
           composer validate
