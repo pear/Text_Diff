@@ -35,5 +35,4 @@ jobs:
           umask 0022
           sudo pear run-tests --ini=" -d include_path=.:/usr/share/php" -q -d -r ./tests
           pear package package.xml
-          composer install
           composer validate
