@@ -11,13 +11,13 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <name>Chuck Hagenbuch</name>
   <user>chagenbu</user>
   <email>chuck@horde.org</email>
-  <active>yes</active>
+  <active>no</active>
  </lead>
  <lead>
   <name>Jan Schneider</name>
   <user>yunosh</user>
   <email>jan@horde.org</email>
-  <active>yes</active>
+  <active>no</active>
  </lead>
  <lead>
   <name>Paul M Jones</name>
@@ -25,9 +25,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>pmjones@memphis.edu</email>
   <active>no</active>
  </lead>
- <date>2017-03-08</date>
+ <date>2024-03-10</date>
  <version>
-  <release>1.2.2</release>
+  <release>1.2.3</release>
   <api>1.2.2</api>
  </version>
  <stability>
@@ -36,8 +36,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
  <notes>
-  * Fully use PHP5 constructors
-  * Make statically called method static
+PR #6: Fix: Do not use strings as arguments to assert()
+PR #7: Fix: Do not use each()
+PR #8: Fix Deprecated: Creation of dynamic property + loops for $matches
  </notes>
 
  <contents>
@@ -116,6 +117,24 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </dependencies>
  <phprelease />
  <changelog>
+
+  <release>
+   <date>2024-03-10</date>
+   <version>
+    <release>1.2.3</release>
+    <api>1.2.2</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://opensource.org/licenses/lgpl-license.php">LGPL</license>
+   <notes>
+PR #6: Fix: Do not use strings as arguments to assert()
+PR #7: Fix: Do not use each()
+PR #8: Fix Deprecated: Creation of dynamic property + loops for $matches
+   </notes>
+  </release>
 
   <release>
    <date>2017-03-08</date>
